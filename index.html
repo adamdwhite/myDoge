@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> <i id="splashicon" class="material-icons">pan_tool</i>
+        <i id="splashicon" class="material-icons">pets</i>
+    </title>
+    <link rel="stylesheet" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div ng-app="myDoge App">
+        <div ng-include="'partials/navbar.html'"></div>
+        <div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 main-container">
+                    <div ng-view>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/values/fbcreds.js"></script>
+
+    <!-- factories -->
+    <script src="./app/factories/factory-newQA.js"></script>
+    <script src="./app/factories/factory-user.js"></script>
+    <script src="./app/factories/factory-filter.js"></script>
+
+    <!-- controllers -->
+    <script src="./app/controllers/ctrl-detailQA.js"></script>
+    <script src="./app/controllers/ctrl-newQA.js"></script>
+    <script src="./app/controllers/ctrl-navbar.js"></script>
+    <script src="./app/controllers/ctrl-user.js"></script>
+
+</body>
+
+</html>
