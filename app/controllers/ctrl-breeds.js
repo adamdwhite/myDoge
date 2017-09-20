@@ -18,21 +18,18 @@ app.controller("breedCtrl",
         breedSearchFactory,
         userFactory
     ) {
-
-        $scope.firstName = "John";
-        $scope.lastName = "Doe";
         // $scope.breeds = [];
 
         breedSearchFactory.getBreedNames()
             .then(function(itemCollection) {
                 // push items into the array for search functionality
-                // let breedArray = [];
+                let breedArray = [];
                 $scope.breeds = Object.keys(itemCollection);
                 $scope.breeds.forEach((item) => {
-                    $scope.breeds.push(itemCollection[item]);
+                    breedArray.push(itemCollection[item]);
                 });
-                console.log("breeds", itemCollection);
-                // $scope.breeds = breedArray;
+                // console.log("breeds", itemCollection);
+                $scope.breeds = breedArray;
             });
 
 
