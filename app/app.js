@@ -2,53 +2,62 @@
 
 const app = angular.module("myDoge App", ["ngRoute"]);
 
-let isAuth = (userFactory) => new Promise((resolve, reject) => {
-    console.log("userFactory is", userFactory);
-    userFactory.isAuthenticated()
-        .then((userExists) => {
-            if (userExists) {
-                console.log("Authenticated, go ahead");
-                resolve();
-            } else {
-                console.log("Authentication reject, GO AWAY");
-                reject();
-            }
-        });
-});
+let isAuth = function(userFactory) {
+    new Promise((resolve, reject) => {
+        console.log("userFactory is calling", userFactory);
+        userFactory.isAuthenticated()
+            .then((userExists) => {
+                if (userExists) {
+                    console.log("Authenticated, go ahead");
+                    resolve();
+                } else {
+                    console.log("Authentication reject, GO AWAY");
+                    reject();
+                }
+            });
+    });
+};
 
 
 app.config(($routeProvider) => {
     $routeProvider
         .when('/', {
             templateUrl: 'partials/splash.html',
-            controller: 'listCtrl',
+            controller: 'splashCtrl',
         })
-        .when('/login', {
-            templateUrl: 'partials/user.html',
-            controller: 'userCtrl',
+        .when('/item/breedSearch', {
+            templateUrl: 'partials/search-keyword.html',
+            controller: 'searchCtrl',
         })
-        // // .when('/splash', {
-        // //     templateUrl: 'partials/splash.html',
-        // //     controller: 'userCtrl',
-        // })
-        .when('/task-list', {
-            templateUrl: 'partials/saved-list.html',
-            controller: 'listCtrl',
+
+    .when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'loginCtrl',
+    })
+
+    .when('/about', {
+        templateUrl: 'partials/about.html',
+        controller: 'aboutCtrl',
+    })
+
+    .when('/dashboard', {
+            templateUrl: 'partials/dashboard.html',
+            controller: 'dashboardCtrl',
             resolve: { isAuth }
         })
-        .when('/item/newItem', {
-            templateUrl: 'partials/QA-form.html',
-            controller: 'addTaskCtrl',
+        .when('/item/newQA', {
+            templateUrl: 'partials/new-QA.html',
+            controller: 'newQACtrl',
             // resolve: { isAuth }
         })
-        .when('/task/:itemId', {
+        .when('/dashboard/savedQA', {
             templateUrl: 'partials/saved-QA.html',
-            controller: 'detailTaskCtrl',
+            controller: 'savedQACtrl',
             resolve: { isAuth }
         })
-        .when('/task/:itemId/edit', {
-            templateUrl: 'partials/saved-QA.html',
-            controller: 'editTaskCtrl',
+        .when('/dashboard/savedBreeds', {
+            templateUrl: 'partials/saved-breeds.html',
+            controller: 'savedBreedsCtrl',
             resolve: { isAuth }
         })
         .otherwise('/');

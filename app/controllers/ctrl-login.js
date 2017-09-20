@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("userCtrl", function($scope, $window, userFactory, $location) {
+app.controller("loginCtrl", function($scope, $window, userFactory, $location, $q, FBCreds) {
 
     console.log("control-user has loaded!");
 
@@ -31,7 +31,7 @@ app.controller("userCtrl", function($scope, $window, userFactory, $location) {
                 //need to update the view
                 // $scope.$apply();
                 //Option TWO
-                $window.location.href = "#!/task-list";
+                $window.location.href = "#!/";
             });
     };
 
@@ -41,7 +41,7 @@ app.controller("userCtrl", function($scope, $window, userFactory, $location) {
             .then(function() {
                 console.log("logged out DONE");
                 //no need to redirect since isAuth verifies login and will take care of re-direction
-                // $location.href = "#!/";
+                $location.href = "#!/";
             }, function(error) {
                 console.log("error occured on logout");
             });
@@ -63,15 +63,15 @@ app.controller("userCtrl", function($scope, $window, userFactory, $location) {
             });
     };
 
-    //when first loaded, make sure no one is logged in
-    // // console.log("what is this?", userFactory.isAuthenticated());
-    // if (userFactory.isAuthenticated()) 
-    //   logout();
+    // when first loaded, make sure no one is logged in
+    console.log("what is this?", userFactory.isAuthenticated());
+    if (userFactory.isAuthenticated())
+        logout();
 
     // console.log("app isAuth", isAuth());
-    //   if (isAuth()){
+    // if (isAuth()) {
     //     console.log("app isAuth", isAuth());
-    //   }
+    // }
 
 
 });

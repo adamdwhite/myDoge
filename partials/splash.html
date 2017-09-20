@@ -4,12 +4,17 @@
     <i id="splashicon" class="material-icons">pets</i>
     <h1 class="display-3">myDoge</h1>
 
-    <p class="lead">The best fit for you and your new pupper.</p>
-    <hr class="my-4">
-    <p>myDoge walks you through a lifestyle questionnaire to match you with the most suitable dog breeds</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href='#!/item/newItem' role="button">Let's Go!</a>
-    </p>
+    <!-- ng-include-include the search-keyword partial -->
+    <div ng-controller="breedCtrl">
+        <div ng-include="'partials/search-keyword.html'">
+            <!-- search controller partial loads -->
+        </div>
+
+    </div>
+
+    <!-- This links to the QA form page -->
+    <p class="lead">Answer a lifestyle questionnaire to match you with the most suitable dog breeds</p>
+    <a class="btn btn-primary btn-lg" href='#!/item/newItem' role="button">Let's go!</a>
     <hr class="my-4">
     <p>Your myDoge account lets you save your searches</p>
     <p class="lead">

@@ -1,0 +1,46 @@
+<!-- This is the search all breeds functionality. Since it's only searching by single breed, it can print a single breed card to the page, no need to redirect  -->
+<!-- SEARCH BY BREED NAME -->
+<p class="lead">Search for a specific breed: </p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                    <!-- Here's where the ng-model for the searchText lives -->
+                    <input ng-model="breedSearch" type="text" class="form-control" placeholder="Example: Golden">
+                    <span class="input-group-addon">
+                            <button type="submit" ng-click="setBreed(breedSearch)">
+                                    <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+<article class="breed-list">
+    <!-- Here's the output for the search results: -->
+    <section>
+        <div ng-repeat="item in breeds | filter:breedSearch">
+            <img ng-model="breed.image" ng-src="{{item.image}}"></img>
+            <h2 ng-model="breed.name">{{item.name}}</h2>
+            <p ng-model="breed.description">{{item.description}}</p>
+
+
+            <!-- And an option to SAVE the breed - ONLY IF LOGGED IN  -->
+            <button type="submit" ng-click="sendBreed(item)">Save</button>
+            <p>to my breeds</p>
+        </div>
+    </section>
+    <hr class="my-4">
+</article>
+<!-- <p class="lead">Answer a lifestyle questionnaire to match you with the most suitable dog breeds</p>
+        <a class="btn btn-primary btn-lg" href='#!/item/newItem' role="button">Let's go!</a>
+        <hr class="my-4">
+        <p>Your myDoge account lets you save your searches</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href='#!/login' role="button">Log In</a>
+            <a class="btn btn-primary btn-lg" href='#!/login' role="button">Register</a> -->
+</p>
+</div>

@@ -3,6 +3,8 @@
 /*
     provide the basic auth functionality for firebase
  */
+// This factory only deals with AUTHORIZATION
+
 
 app.factory("userFactory", function($q, $http) {
 
@@ -34,12 +36,12 @@ app.factory("userFactory", function($q, $http) {
 
 
     const logIn = function(userObj) {
-        return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
-            .catch(function(error) {
-                let errorCode = error.code;
-                let errorMessage = error.message;
-                console.log("error", errorCode, errorMessage);
-            });
+        return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password);
+        // .catch(function(error) {
+        //     let errorCode = error.code;
+        //     let errorMessage = error.message;
+        //     console.log("error", errorCode, errorMessage);
+        // });
     };
 
 

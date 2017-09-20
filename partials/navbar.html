@@ -8,7 +8,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
+            <!-- <i id="pawbullet" class="material-icons">pets</i>
+            <i id="handbullet" class="material-icons">pan_tool</i> -->
             <a class="navbar-brand" href="#!/item-list">myDoge</a>
         </div>
 
@@ -20,13 +21,14 @@
             </div>
         </div> -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- The various states of the NAVBAR showing certain buttons when logged in / out  -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-show="!isLoggedIn" href="">My Searches</a></li>
+                <li><a ng-show="isLoggedIn" href='#!/task-list'>My Searches</a></li>
                 <li><a ng-show="isLoggedIn" href='#!/item/newItem'>New Search</a></li>
-                <li><a ng-show="isLoggedIn" href='#!/login'>Login</a></li>
-                <li><a ng-show="!isLoggedIn" href="logout()">Logout</a></li>
+                <li><a ng-show="!isLoggedIn" href='#!/login'>Login</a></li>
+                <li><a ng-show="isLoggedIn" href="#!/" ng-click="logout()">Logout</a></li>
+                <li><a ng-show="!isLoggedIn" href='#!/about'>About</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

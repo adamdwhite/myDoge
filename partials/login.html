@@ -1,18 +1,23 @@
 <div class="container container--auth">
     <div class="col-xs-6">
         <h4>Login with Google</h4>
-        <button ng-click="loginGoogle()" class="btn btn-info">Sign In</button>
+        <br>
+        <button ng-click="loginGoogle()" class="btn btn-info">Log In</button>
     </div>
+
     <div class="col-xs-6 text-right">
         <section class="auth-form">
-            <h4>Login/Register with Email</h4>
+            <h4>Login | Register with Email</h4>
+            <br>
             <div>
                 Email: <input type="text" autofocus="true" ng-model="account.email">
             </div>
+            <br>
             <div>
                 Password: <input type="password" ng-model="account.password">
             </div>
             <div>
+                <br>
                 <button ng-click="logIn()" class="btn btn-info">Login</button>
                 <button ng-click="register()" class="btn btn-default">Register</button>
             </div>

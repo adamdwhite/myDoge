@@ -14,7 +14,7 @@ app.factory("todoFactory", function($q, $http, FBCreds) {
             $http.get(`${FBCreds.databaseURL}/items.json?orderBy="uid"&equalTo="${user}"`)
                 .then((itemObject) => {
                     let itemCollection = itemObject.data;
-                    console.log("itemCollection", itemCollection);
+                    // console.log("itemCollection", itemCollection);
                     Object.keys(itemCollection).forEach((key) => {
                         itemCollection[key].id = key;
                         tasks.push(itemCollection[key]);

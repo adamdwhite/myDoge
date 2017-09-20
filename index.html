@@ -9,7 +9,7 @@
     <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -17,7 +17,12 @@
 <body>
 
     <div ng-app="myDoge App">
-        <div ng-include="'partials/navbar.html'"></div>
+        <div ng-controller="navCtrl">
+            <div ng-include="'partials/navbar.html'">
+                <!-- Nav Bar -->
+            </div>
+        </div>
+
         <div>
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 main-container">
@@ -29,7 +34,7 @@
             </div>
         </div>
     </div>
-
+    <!-- module dependencies -->
     <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
@@ -43,12 +48,17 @@
     <script src="./app/factories/factory-newQA.js"></script>
     <script src="./app/factories/factory-user.js"></script>
     <script src="./app/factories/factory-filter.js"></script>
+    <script src="./app/factories/factory-breeds.js"></script>
 
     <!-- controllers -->
-    <script src="./app/controllers/ctrl-detailQA.js"></script>
+    <script src="./app/controllers/ctrl-savedQA.js"></script>
     <script src="./app/controllers/ctrl-newQA.js"></script>
     <script src="./app/controllers/ctrl-navbar.js"></script>
-    <script src="./app/controllers/ctrl-user.js"></script>
+    <script src="./app/controllers/ctrl-about.js"></script>
+    <script src="./app/controllers/ctrl-breeds.js"></script>
+    <script src="./app/controllers/ctrl-login.js"></script>
+    <script src="./app/controllers/ctrl-dashboard.js"></script>
+    <script src="./app/controllers/ctrl-splash.js"></script>
 
 </body>
 
