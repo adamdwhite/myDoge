@@ -7,20 +7,25 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     let getBreedNames = () => {
         return $q((resolve, reject) => {
             let allBreedNames = [];
+            // An array of promises which will start by pushing results into the "runningList"
             Promise.all([
                     getBreedsBySize('small', allBreedNames),
                     getBreedsBySize('medium', allBreedNames),
                     getBreedsBySize('size', allBreedNames)
                 ])
+                // Once all of the above are retrieved, then 
+                // promises are generated for each breed (#199), and details are pushed to allDogDetails
                 .then(() => {
                     console.log("breeds from search", allBreedNames);
                     let detailPromises = [];
                     let allDogDetails = [];
                     allBreedNames.forEach(function(dogName) {
-                        detailPromises.push($http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${dogName}`))
+                        // The url is expecting the dog names to be lower case and spaces are represented with dashes
+                        let cleanDogName = dogName.toLowerCase().replace(/\s/g, '-');
+                        detailPromises.push($http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${cleanDogName}`)
                             .then((result) => {
                                 allDogDetails.push(result.data);
-                            });
+                            }));
                     }, this);
                     Promise.all(detailPromises)
                         .then(() => {
