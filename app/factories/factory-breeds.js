@@ -8,7 +8,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
         return $q((resolve, reject) => {
             let allBreedNames = [];
 
-            // This is the SEARCH factory and the $http it's calling from            
+            // This is the SEARCH factory and the $http it's calling from...            
             const setBreed = function(userInput) {
                 console.log("setBreed function here", userInput);
                 $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${userInput}`)

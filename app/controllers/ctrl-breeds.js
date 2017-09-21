@@ -30,21 +30,6 @@ app.controller("breedCtrl",
                 $scope.breeds = breedArray;
             });
 
-        // This is the SEARCH factory and the $http it's calling from             
-        $scope.setBreed = function(userInput) {
-            console.log("setBreed function here", userInput);
-            $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${userInput}`)
-                .then((itemObject) => {
-                    let itemCollection = itemObject.data;
-                    console.log("breeds from search", itemCollection);
-                    $scope.breeds = itemCollection;
-                    console.log('scope breeds', $scope.breeds);
-                })
-                .catch((error) => {
-                    console.log('ERROR setbreed');
-                });
-        };
-
         // This function will SEND breed object to a breed FACTORY
         let user = userFactory.getCurrentUser();
 
@@ -59,7 +44,7 @@ app.controller("breedCtrl",
         $scope.submitBreed = function() {
             console.log('SAVE breed clicked ');
             console.log('breed adding to user', $scope.breed);
-            breedSearchFactory.submitBreed($scope.breed)
+            breedSearchFactory.setBreed($scope.breed)
                 .then((data) => {
                     $location.url("/dashboard");
                 });
