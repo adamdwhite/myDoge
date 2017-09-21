@@ -3,8 +3,6 @@
 console.log("here's the breed controller");
 
 
-// var app = angular.module("myDoge App", []);
-
 app.controller("breedCtrl",
 
     function(
@@ -32,21 +30,19 @@ app.controller("breedCtrl",
                 $scope.breeds = breedArray;
             });
 
-
-        // This is the SEARCH BAR and the $http it's calling from             
+        // This is the SEARCH factory and the $http it's calling from             
         $scope.setBreed = function(userInput) {
             console.log("setBreed function here", userInput);
-            return $q((resolve, reject) => {
-                $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${userInput}`)
-                    .then((itemObject) => {
-                        let itemCollection = itemObject.data;
-                        console.log("breeds from search", itemCollection);
-                        resolve(itemCollection);
-                    })
-                    .catch((error) => {
-                        reject(error);
-                    });
-            });
+            $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${userInput}`)
+                .then((itemObject) => {
+                    let itemCollection = itemObject.data;
+                    console.log("breeds from search", itemCollection);
+                    $scope.breeds = itemCollection;
+                    console.log('scope breeds', $scope.breeds);
+                })
+                .catch((error) => {
+                    console.log('ERROR setbreed');
+                });
         };
 
         // This function will SEND breed object to a breed FACTORY
@@ -59,13 +55,13 @@ app.controller("breedCtrl",
             uid: user
 
         };
-
+        // submit the SAVED breed and redirect to the user "dashboard"
         $scope.submitBreed = function() {
             console.log('SAVE breed clicked ');
             console.log('breed adding to user', $scope.breed);
-            breedSearchFactory.sendBreed($scope.breed)
+            breedSearchFactory.submitBreed($scope.breed)
                 .then((data) => {
-                    $location.url("/task-list");
+                    $location.url("/dashboard");
                 });
         };
     }

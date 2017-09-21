@@ -27,7 +27,7 @@ app.controller("loginCtrl", function($scope, $window, userFactory, $location, $q
         userFactory.logIn($scope.account)
             .then(() => {
                 //Option One
-                // $location.path("/task-list");
+                // $location.path("/dashboard");
                 //need to update the view
                 // $scope.$apply();
                 //Option TWO
@@ -53,7 +53,7 @@ app.controller("loginCtrl", function($scope, $window, userFactory, $location, $q
         userFactory.authWithProvider()
             .then((result) => {
                 let user = result.user.uid;
-                $location.path("/task-list");
+                $location.path("/dashboard");
                 $scope.$apply();
             }).catch((error) => {
                 console.log("error with google login");

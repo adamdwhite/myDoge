@@ -20,18 +20,20 @@
 </div>
 <hr class="my-4">
 <article class="breed-list">
-    <!-- Here's the output for the search results: -->
+    <!-- Here's the output div for the search results: -->
     <section>
-        <div ng-repeat="item in breeds | filter:breedSearch">
-            <img ng-model="breed.image" ng-src="{{item.image}}"></img>
-            <h2 ng-model="breed.name">{{item.name}}</h2>
-            <p ng-model="breed.description">{{item.description}}</p>
+        <img ng-model="breeds.image" ng-src="{{breeds.image}}"></img>
+        <h2 ng-model="breeds.name">{{breeds.name}}</h2>
+        <p ng-model="breeds.description">{{breeds.description}}</p>
 
 
-            <!-- And an option to SAVE the breed - ONLY IF LOGGED IN  -->
-            <button type="submit" ng-click="sendBreed(item)">Save</button>
-            <p>to my breeds</p>
+        <!-- And an option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
+        <div ng-show="!isLoggedIn">
+            <a class="btn btn-primary btn-lg" role="button" ng-click="submitBreed()">Save</a>
+            <nbsp>to
+                <a href="" ng-click="">My Breeds</a>
         </div>
+
     </section>
     <hr class="my-4">
 </article>

@@ -1,3 +1,22 @@
+body {
+  background-color: #EDFBFD;
+  font-family: 'Spinnaker';
+  border-radius: 3px; }
 
+#splashicon {
+  font-size: 3em;
+  color: #7E9638; }
+
+.jumbotron {
+  border-radius: 3px;
+  background-color: white;
+  text-align: center;
+  padding: 20px; }
+
+.container-fluid {
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  background-color: #CEBF91; }
 
 /*# sourceMappingURL=main.css.map */
