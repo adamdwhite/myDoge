@@ -27,7 +27,7 @@ app.config(($routeProvider) => {
         })
         .when('/item/breedSearch', {
             templateUrl: 'partials/search-keyword.html',
-            controller: 'searchCtrl',
+            controller: 'breedCtrl',
         })
 
     .when('/login', {

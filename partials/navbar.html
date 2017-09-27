@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a ng-show="isLoggedIn" href='#!/dashboard'>My Searches</a></li>
-                <li><a ng-show="!isLoggedIn" href='#!/item/breedSearch'>New Search</a></li>
+                <li><a ng-show="isLoggedIn" href='#!/item/breedSearch'>New Search</a></li>
                 <li><a ng-show="!isLoggedIn" href='#!/login'>Login</a></li>
                 <li><a ng-show="isLoggedIn" href="#!/" ng-click="logout()">Logout</a></li>
                 <li><a ng-show="!isLoggedIn" href='#!/about'>About</a></li>

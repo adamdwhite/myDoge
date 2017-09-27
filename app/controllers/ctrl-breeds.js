@@ -16,19 +16,12 @@ app.controller("breedCtrl",
         breedSearchFactory,
         userFactory
     ) {
-        // $scope.breeds = [];
 
-        breedSearchFactory.getBreedNames()
-            .then(function(itemCollection) {
-                // push items into the array for search functionality
-                let breedArray = [];
-                $scope.breeds = Object.keys(itemCollection);
-                $scope.breeds.forEach((item) => {
-                    breedArray.push(itemCollection[item]);
-                });
-                // console.log("breeds", itemCollection);
-                $scope.breeds = breedArray;
+        breedSearchFactory.getAllBreeds()
+            .then(function(allBreeds) {
+                $scope.breeds = allBreeds;
             });
+
 
         // This function will SEND breed object to a breed FACTORY
         let user = userFactory.getCurrentUser();

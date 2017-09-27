@@ -1,26 +1,26 @@
 // This is the QUESTIONNAIRE content with the corresponding values to be assigned via the commented link.
 // Based on the answer# that the user selects, the breeds listed within each link below should be INCLUDED in the compiled QAForm.
 
+// Whenever there is "NO FILTER" as a result, the list of breed will be ALL, i.e. 
+// ALL BREEDS >>> https://dogbreed-characteristics.herokuapp.com/allBreeds  
+
+
 [{
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
         "questionId": "1",
         "text": "What size of dog are you looking for?",
         "answer1": "Tiny (up to 11 pounds)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=small
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=small
         "answer2": "Small (12-22 pounds)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=small
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=small
         "answer3": "Medium (23-44 pounds)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=medium
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=medium
         "answer4": "Large (45-88 pounds)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=medium
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=medium
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
         "answer5": "Extra Large (89-140 pounds)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
+        // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
         "answer6": "No preference"
-            // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=small
-            // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=medium
-            // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=size
-            // (Includes all breed sizes)
+            // NO FILTER
     },
     {
         "questionId": "2",
@@ -28,8 +28,11 @@
         "answer1": "I live in a small apartment in a busy part of my city",
         // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
         "answer2": "I live in an apartment with dog amenities",
+        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
         "answer3": "I live in a house with a yard",
+        // NO FILTER
         "answer4": "I live in a house with a fenced yard"
+            // NO FILTER
     },
     {
         "questionId": "3",
@@ -39,61 +42,88 @@
         "answer2": "Mild summers and cold winters",
         // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=tolerates-cold-weather
         "answer3": "A mix of both"
+            // NO FILTER
     },
     {
         // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=affectionate-with-family
         "questionId": "4",
         "text": "Who lives in your household?",
         "answer1": "Adults only",
+        // NO FILTER
         "answer2": "Adult(s) and child(ren)",
         // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=incredibly-kid-friendly-dogs
         "answer3": "Just me"
+            // NO FILTER
     },
     {
 
         "questionId": "5",
         "text": "Do you have pets already?",
-        "answer1": "Nope, just people",
+        "answer1": "Nope, just people in the house",
+        // INCLUDE http://dogtime.com/dog-breeds/characteristics/good-for-novice-owners
         "answer2": "Yes, cat(s)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=prey-drive
+        // EXCLUDE these breeds >>>  https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=prey-drive
         "answer3": "Yes, dog(s)"
-            // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=dog-friendly
+            // INCLUDE these breeds >>> https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=dog-friendly
     },
     {
-        // http://dogtime.com/dog-breeds/characteristics/low-shed-dogs
         "questionId": "6",
         "text": "Are you or anyone in your household allergic to animal dander?",
         "answer1": "Yes",
+        // INCLUDE   // http://dogtime.com/dog-breeds/characteristics/low-shed-dogs
         "answer2": "No"
+            // NO FILTER
     },
     {
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=exercise-needs
         "questionId": "7",
         "text": "How active would you prefer your dog to be?",
-        "answer1": "I would like to walk my dog daily, and that's about it",
         "answer2": "I like to run, and would like my dog to be a running partner",
+        // INCLUDE >>> https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=exercise-needs
+        "answer1": "I would like to walk my dog daily, and that's about it",
+        // NO FILTER
         "answer3": "I'm pretty much a couch potato, and need a dog who is okay with that"
+            // INCLUDE >>>  http://dogtime.com/dog-breeds/characteristics/dont-need-tons-of-exercise
     },
     {
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=easy-to-groom
         "questionId": "8",
         "text": "How much are you willing to put into grooming your dog?",
         "answer1": "I want my dog to be groomed to show-quality",
-        "answer2": "I will groom my dog as recommended, and prefer less maintenance"
+        // INCLUDE // http://dogtime.com/dog-breeds/characteristics/more-grooming-required
+        "answer2": "I will groom my dog as recommended, and I prefer less maintenance",
+        // NO FILTER
+        "answer3": "I would love a dog with very little grooming required"
+            // INCLUDE // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=easy-to-groom
     },
     {
         "questionId": "9",
         "text": "How do you feel about shedding?",
         "answer1": "I don't mind shedding",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=amount-of-shedding
+        // INCLUDE // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=amount-of-shedding
         "answer2": "I'm okay with some shedding, but not a lot",
+        // NO FILTER
         "answer3": "I want my dog to shed as little as possible"
+            // INCLUDE https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=low-shed-dogs
+
     },
     {
         "questionId": "10",
         "text": "What's your schedule like?",
         "answer1": "I work long hours, and my dog will need to be okay on his/her own most of the day",
-        "answer2": "I work a moderate schedule, off on weekends, and I would like to be home for my dog whenever possible",
+        // INCLUDE http://dogtime.com/dog-breeds/characteristics/tolerates-being-alone
+        "answer2": "I work a moderate schedule, off on weekends, and I would like to be home for my dog whenever possible, but my dog will be home alone for at least 5 hours a day",
+        // INCLUDE http://dogtime.com/dog-breeds/characteristics/tolerates-being-alone
         "answer3": "I work from home, or I’m home much of the time, or I’m just crazy about my dog and I will be around to keep him/her company more often than not"
+            // NO FILTER
+    },
+    {
+        "questionId": "11",
+        "text": "What's your general lifestyle and household environment like?",
+        "answer1": "Real chill and peaceful most of the time",
+        // INCLUDE http://dogtime.com/dog-breeds/characteristics/low-intensity
+        "answer2": "Moderately busy, plenty going on with family and such, but not too crazy",
+        // NO FILTER
+        "answer3": "Pretty bustling most of the time, such as lots of kids, loud music, hosting parties, etc."
+            //   EXCLUDE these breeds>>>  http://dogtime.com/dog-breeds/characteristics/sensitivity-level
     }
+
 ]
