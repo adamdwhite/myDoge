@@ -21,7 +21,10 @@ app.controller("breedCtrl",
             .then(function(allBreeds) {
                 $scope.allBreeds = [];
                 allBreeds.forEach(function(breedName) {
-                    $scope.allBreeds.push({ name: breedName });
+                    breedSearchFactory.getBreedDetails(breedName)
+                        .then((breedDetails) => {
+                            $scope.allBreeds.push(breedDetails);
+                        });
                 }, this);
             });
 

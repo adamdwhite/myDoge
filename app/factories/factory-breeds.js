@@ -18,6 +18,24 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 });
         });
     };
+
+    const getBreedDetails = function(breedName) {
+        console.log('showing breed of ...', breedName);
+        return $q((resolve, reject) => {
+            let cleanDogName = breedName.toLowerCase().replace(/\s/g, '-');
+            $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${cleanDogName}`)
+                .then((result) => {
+                    resolve(result.data);
+                    console.log('');
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+
+
     //         let currentBreedID = null;
     //         console.log('breed search-bar factory!');
     //         let getBreedNames = () => {
@@ -102,5 +120,5 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     //                     });
     //             });
     //     };
-    return { getAllBreeds };
+    return { getAllBreeds, getBreedDetails };
 });
