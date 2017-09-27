@@ -1,12 +1,18 @@
 body {
     background-color: #EDFBFD;
-    font-family: 'Fresca';
+    font-family: 'Helvetica';
+    color: #110E09;
     border-radius: 1px;
 }
 
+#handlogopaw {
+    align-content: center;
+}
+
 #splashicon {
-    font-size: 5em;
-    color: #7E9638;
+    font-size: 4em;
+    color: #9EB656;
+    // color: #110E09;
 }
 
 .jumbotron {
@@ -16,6 +22,7 @@ body {
     padding: 10px;
 }
 
+// NAVBAR Style
 .container-fluid {
     border: 1px solid #FDF8EA;
     border-radius: 1px;
@@ -27,4 +34,9 @@ body {
     text-align: left;
     font-size: 1em;
     padding: 10px;
+}
+
+// SEARCH input element
+.form-control {
+    justify-content: center;
 }

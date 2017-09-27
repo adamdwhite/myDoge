@@ -10,25 +10,17 @@
         </button>
             <!-- <i id="pawbullet" class="material-icons">pets</i>
             <i id="handbullet" class="material-icons">pan_tool</i> -->
-            <a class="navbar-brand" href="#!/item-list">myDoge</a>
+            <a class="navbar-brand" href="#!/item-list">my Doge</a>
         </div>
-
-        <!-- demonstration of two controllers sharing a factory -->
-        <!-- <div class="navbar-form navbar-left input-group" ng-show="isLoggedIn">
-            <div class="input-group" ng-show="showSearch">
-                <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></span>
-                <input type="text" class="form-control" placeholder="Search" ng-model="searchText.search">
-            </div>
-        </div> -->
 
         <!-- The various states of the NAVBAR showing certain buttons when logged in / out  -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a ng-show="isLoggedIn" href='#!/dashboard'>My Searches</a></li>
                 <li><a ng-show="isLoggedIn" href='#!/item/breedSearch'>New Search</a></li>
-                <li><a ng-show="!isLoggedIn" href='#!/login'>Login</a></li>
-                <li><a ng-show="isLoggedIn" href="#!/" ng-click="logout()">|  Logout</a></li>
-                <li><a ng-show="!isLoggedIn" href='#!/about'>|  About</a></li>
+                <li><a ng-show="!isLoggedIn" href='#!/login'>Loge In</a></li>
+                <li><a ng-show="isLoggedIn" href="#!/" ng-click="logout()">|  Loge Out</a></li>
+                <li><a ng-show="isLoggedIn" href='#!/about'>|  About</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

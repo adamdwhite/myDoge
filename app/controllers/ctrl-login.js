@@ -64,7 +64,7 @@ app.controller("loginCtrl", function($scope, $window, userFactory, $location, $q
     };
 
     // when first loaded, make sure no one is logged in
-    console.log("what is this?", userFactory.isAuthenticated());
+    console.log("Is anyone logged in?", userFactory.isAuthenticated());
     // if (userFactory.isAuthenticated())
     //     logout();
 

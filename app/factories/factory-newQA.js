@@ -1,11 +1,27 @@
 "use strict";
 
 /*
-    provide the basic crud interactions with firebase
- 
+provide the basic crud interactions with firebase
+
 */
 
-app.factory("todoFactory", function($q, $http, FBCreds) {
+app.factory("factoryQA", function($q, $http, FBCreds) {
+
+
+    const addTask = function(obj) {
+        let newObj = JSON.stringify(obj);
+        return $http.post(`${FBCreds.databaseURL}/items.json`, newObj)
+            .then((data) => {
+                console.log("data", data);
+                return data;
+            }, (error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log("error", errorCode, errorMessage);
+            });
+    };
+
+
 
     const getAllTasks = function(user) {
         let tasks = [];
@@ -25,19 +41,6 @@ app.factory("todoFactory", function($q, $http, FBCreds) {
                     reject(error);
                 });
         });
-    };
-
-    const addTask = function(obj) {
-        let newObj = JSON.stringify(obj);
-        return $http.post(`${FBCreds.databaseURL}/items.json`, newObj)
-            .then((data) => {
-                console.log("data", data);
-                return data;
-            }, (error) => {
-                let errorCode = error.code;
-                let errorMessage = error.message;
-                console.log("error", errorCode, errorMessage);
-            });
     };
 
     const editTask = function(id, obj) {

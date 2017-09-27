@@ -26,7 +26,7 @@ app.config(($routeProvider) => {
             controller: 'splashCtrl',
         })
         .when('/item/breedSearch', {
-            templateUrl: 'partials/search-keyword.html',
+            templateUrl: 'partials/splash.html',
             controller: 'breedCtrl',
         })
 
@@ -51,12 +51,12 @@ app.config(($routeProvider) => {
             // resolve: { isAuth }
         })
         .when('/dashboard/savedQA', {
-            templateUrl: 'partials/saved-QA.html',
+            templateUrl: 'partials/dashboard.html',
             controller: 'savedQACtrl',
             resolve: { isAuth }
         })
         .when('/dashboard/savedBreeds', {
-            templateUrl: 'partials/saved-breeds.html',
+            templateUrl: 'partials/dashboard.html',
             controller: 'savedBreedsCtrl',
             resolve: { isAuth }
         })

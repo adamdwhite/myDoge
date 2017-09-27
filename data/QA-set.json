@@ -1,4 +1,4 @@
-// This is the QUESTIONNAIRE content with the corresponding values to be assigned via the commented link.
+// This is the complete QUESTIONNAIRE content with the corresponding values to be assigned via the commented link.
 // Based on the answer# that the user selects, the breeds listed within each link below should be INCLUDED in the compiled QAForm.
 
 // Whenever there is "NO FILTER" as a result, the list of breed will be ALL, i.e. 
@@ -26,9 +26,9 @@
         "questionId": "2",
         "text": "What is your type of residence?",
         "answer1": "I live in a small apartment in a busy part of my city",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
+        // INCLUDE -- https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
         "answer2": "I live in an apartment with dog amenities",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
+        // INCLUDE -- https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=adapts-well-to-apartment-living
         "answer3": "I live in a house with a yard",
         // NO FILTER
         "answer4": "I live in a house with a fenced yard"
@@ -38,20 +38,20 @@
         "questionId": "3",
         "text": "What kind of climate do you live in?",
         "answer1": "Hot summers and mild winters",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=tolerates-hot-weather
+        // INCLUDE -- https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=tolerates-hot-weather
         "answer2": "Mild summers and cold winters",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=tolerates-cold-weather
+        // INCLUDE -- https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=tolerates-cold-weather
         "answer3": "A mix of both"
             // NO FILTER
     },
     {
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=affectionate-with-family
         "questionId": "4",
         "text": "Who lives in your household?",
         "answer1": "Adults only",
         // NO FILTER
         "answer2": "Adult(s) and child(ren)",
-        // https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=incredibly-kid-friendly-dogs
+        // INCLUDE --  https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=affectionate-with-family
+        // and INCLUDE --  https://dogbreed-characteristics.herokuapp.com/characteristic/?characteristic=incredibly-kid-friendly-dogs
         "answer3": "Just me"
             // NO FILTER
     },

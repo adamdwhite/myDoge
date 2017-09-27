@@ -29,23 +29,23 @@ app.controller("breedCtrl",
             });
 
 
-        // This function will SEND a new object to FACTORY
+        // This function will SEND a new object to FACTORY, using the 
         let user = userFactory.getCurrentUser();
 
-        $scope.breed = {
+        $scope.breeds = {
             image: "",
             name: "",
             description: "",
             uid: user
-
         };
-        // submit the SAVED breed and redirect to the user "dashboard"
+        // submit the SAVED breed 
         $scope.submitBreed = function() {
             console.log('SAVE breed clicked ');
-            console.log('breed adding to user', $scope.breed);
-            breedSearchFactory.setBreed($scope.breed)
+            console.log('Adding this breed to user', $scope.breeds);
+            breedSearchFactory.submitBreed($scope.breeds)
                 .then((data) => {
-                    $location.url("/dashboard");
+                    $scope.breeds.push(data);
+                    // $location.url("/dashboard");
                 });
         };
     }
