@@ -19,7 +19,8 @@
     </div>
 </div>
 <hr class="my-4">
-<article class="breed-list">
+<!-- Limits the output to after the user has typed 3 characters -->
+<article class="breed-list" ng-show="breedSearch.length>=3">
     <!-- Here's the output div for the search results: -->
     <section>
         <div ng-repeat="breed in allBreeds | filter:breedSearch">
@@ -27,7 +28,6 @@
             <h2 ng-model="breed.name">{{breed.name}}</h2>
             <p ng-model="breed.description">{{breed.description}}</p>
         </div>
-
 
         <!-- And an option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
         <div ng-show="!isLoggedIn">
