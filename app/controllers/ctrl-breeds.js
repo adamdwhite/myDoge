@@ -19,7 +19,10 @@ app.controller("breedCtrl",
 
         breedSearchFactory.getAllBreeds()
             .then(function(allBreeds) {
-                $scope.breeds = allBreeds;
+                $scope.allBreeds = [];
+                allBreeds.forEach(function(breedName) {
+                    $scope.allBreeds.push({ name: breedName });
+                }, this);
             });
 
 

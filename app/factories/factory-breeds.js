@@ -9,7 +9,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
         return $q((resolve, reject) => {
             $http.get("https://dogbreed-characteristics.herokuapp.com/allBreeds")
                 .then((result) => {
-                    let allBreeds = result.data;
+                    let allBreeds = result.data.breeds;
                     console.log("all breeds", allBreeds);
                     resolve(allBreeds);
                 })

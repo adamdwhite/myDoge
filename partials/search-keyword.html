@@ -22,9 +22,11 @@
 <article class="breed-list">
     <!-- Here's the output div for the search results: -->
     <section>
-        <img ng-model="breeds.image" ng-src="{{breeds.image}}"></img>
-        <h2 ng-model="breeds.name">{{breeds.name}}</h2>
-        <p ng-model="breeds.description">{{breeds.description}}</p>
+        <div ng-repeat="breed in allBreeds | filter:breedSearch">
+            <img ng-model="breed.image" ng-src="{{breed.image}}"></img>
+            <h2 ng-model="breed.name">{{breed.name}}</h2>
+            <p ng-model="breed.description">{{breed.description}}</p>
+        </div>
 
 
         <!-- And an option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
