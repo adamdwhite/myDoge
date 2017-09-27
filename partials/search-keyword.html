@@ -19,18 +19,21 @@
     </div>
 </div>
 <hr class="my-4">
-<!-- Limits the output to after the user has typed 3 characters -->
+
+<!-- Limits the output to only after the user has typed 3 or more characters -->
 <article class="breed-list" ng-show="breedSearch.length>=3">
+
     <!-- Here's the output div for the search results: -->
     <section>
         <div ng-repeat="breed in allBreeds | filter:breedSearch">
-            <img ng-model="breed.image" ng-src="{{breed.image}}"></img>
+            <hr class="my-4">
+            <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}"></img>
             <h2 ng-model="breed.name">{{breed.name}}</h2>
-            <p ng-model="breed.description">{{breed.description}}</p>
+            <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
         </div>
 
-        <!-- And an option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
-        <div ng-show="!isLoggedIn">
+        <!-- Option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
+        <div ng-show="isLoggedIn">
             <a class="btn btn-primary btn-lg" role="button" ng-click="submitBreed()">Save</a>
             <nbsp>to
                 <a href="" ng-click="">My Breeds</a>

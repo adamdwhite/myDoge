@@ -29,7 +29,7 @@ app.controller("breedCtrl",
             });
 
 
-        // This function will SEND breed object to a breed FACTORY
+        // This function will SEND a new object to FACTORY
         let user = userFactory.getCurrentUser();
 
         $scope.breed = {
