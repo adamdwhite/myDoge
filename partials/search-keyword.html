@@ -5,12 +5,9 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
             <div id="imaginary_container">
-                <div class="input-group stylish-input-group">
-                    <!-- The ng-model for the searchText lives -->
+                <div class="col-sm-6 col-sm-offset-3">
+                    <!-- The ng-model for the searchText lives here -->
                     <input ng-model="breedSearch" type="text" class="form-control" placeholder="Example: Golden...">
-
-                    </button>
-                    </span>
                 </div>
             </div>
         </div>
@@ -18,24 +15,25 @@
 </div>
 <hr class="my-4">
 
-<!-- Limits the output to only after the user has typed 3 or more characters -->
+<!-- limited to only after the user has typed 3 or more characters -->
 <article class="breed-list" ng-show="breedSearch.length>=3">
-    <!-- Output div for the search results: -->
+    <!-- OUTPUT div for the search results: -->
     <section>
+        <!-- Need to create a filter that only searches on breed.name and not all of the returned data -->
         <div ng-repeat="breed in allBreeds | filter:breedSearch">
             <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}"></img>
             <h2 ng-model="breed.name">{{breed.name}}</h2>
             <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
 
             <!-- Option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
-
-            <a ng-show="!isLoggedIn" class="btn btn-primary btn-lg" role="button" ng-click="submitBreed()">Save</a>
-            <nbsp>to
-                <a href="partials/dashboard.html" ng-click="">My Breeds</a>
-                <hr class="my-4">
+            <div ng-show="isLoggedIn">
+                <a class="btn btn-primary btn-lg" role="button" ng-click="saveBreed(breed)">Save</a>
+                <nbsp>to</nbsp>
+                <a href="partials/dashboard.html">My Breeds</a>
+            </div>
         </div>
+        <hr class="my-4">
     </section>
-    <hr class="my-4">
 </article>
 <!-- <p class="lead">Answer a lifestyle questionnaire to match you with the most suitable dog breeds</p>
         <a class="btn btn-primary btn-lg" href='#!/item/newItem' role="button">Let's go!</a>

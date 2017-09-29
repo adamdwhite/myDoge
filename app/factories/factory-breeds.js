@@ -35,22 +35,39 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 });
         });
     };
-    // This is the factory for PUSHING the saved breed object to firebase
-    const saveBreed = function(object) {
-        let newObject = JSON.stringify(object);
-        console.log("object.breedID", object.breedID);
+    // This is the factory for PUSHING the new saved breed object to firebase
+    const saveBreed = function(saveDoge) {
+        // let newObject = JSON.stringify(object);
+        console.log("save a Doge", saveDoge);
         // currentBreedID = object.breedID;
         return $http.post(`${FBCreds.databaseURL}/Doge.json`,
-                newObject)
+                saveDoge)
             .then((data) => {
                 console.log("data", data);
                 return data;
             }, (error) => {
                 let errorCode = error.code;
                 let errorMessage = error.message;
-                console.log("error", errorCode, errorMessage);
+                console.log("error - not saved!", errorCode, errorMessage);
+            });
+    };
+    // This is the factory for GETTING the USEr's saved breed object from firebase
+    const getDoges = function(saveDoge) {
+        // let newObject = JSON.stringify(object);
+        console.log("saving a Doge", saveDoge);
+        // currentBreedID = object.breedID;
+        return $http.post(`${FBCreds.databaseURL}/Doge.json`,
+                saveDoge)
+            .then((data) => {
+                console.log("data", data);
+                return data;
+            }, (error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                console.log("error - not saved!", errorCode, errorMessage);
             });
     };
 
-    return { getAllBreeds, getBreedDetails, saveBreed };
+
+    return { getAllBreeds, getBreedDetails, saveBreed, getDoges };
 });

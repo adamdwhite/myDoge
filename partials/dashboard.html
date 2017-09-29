@@ -4,14 +4,19 @@
     <i id="splashicon" class="material-icons">pets</i>
     <h1 class="display-3">your Doge</h1>
     <br><br>
-    <p class="lead">Welcome back, {{User first name}}!</p>
-    <br>
+    <p class="lead">Welcome back, {{User name}}!</p>
+    <!-- <br>
     <p class="lead">
         <a class="btn btn-primary btn-lg" ng-ref='/item/newItem' role="button">New Doge Search</a>
     </p>
-    <br>
+    <br> -->
     <hr class="my-4">
     <h3>Your saved breeds:</h3>
+    <!-- Here's where the saved breeds will go, stick them cards in a div that will add a DELETE chip to delete itself -->
+    <div ng-model="saveDoge">
+
+    </div>
+
     <hr class="my-4">
     <!-- Here will be a list of saved searches for this user, in the following format:
 User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->

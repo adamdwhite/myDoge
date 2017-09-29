@@ -1,51 +1,141 @@
 <!-- This is the TEMPLATE for each question -->
+<!-- The QA form is continual via scrollspy. If user exits, autosave progress to dashboard. -->
 
-<p>Static text for the QUESTIONNAIRE template Consequat consectetur laboris mollit nisi adipisicing et sint laboris cillum ullamco cillum. Aute reprehenderit culpa ea veniam deserunt in ullamco eu adipisicing laborum non ut. Nulla reprehenderit ullamco cupidatat
-    tempor est commodo magna qui enim amet consequat.</p>
+<body data-spy="scroll" data-target="#navbar-example">
+    <p>Static text for the top of the QUESTIONNAIRE. Consequat consectetur laboris mollit nisi adipisicing et sint laboris cillum ullamco cillum. Aute reprehenderit culpa ea veniam deserunt in ullamco eu adipisicing laborum non ut.</p>
 
-<h2>{{Question (# of 13)}}</h2>
 
-<h3>{{Question text:}}</h3>
+    <!-- QA 1 of 11:  -->
+    <h3 class="qXofX">1 of 11</h3>
 
-<div class="custom-controls-stacked">
-    <label class="custom-control custom-radio">
+    <h2 class="QAtext">"What size of dog are you looking for?"</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
           <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">{{Option1}}</span>
+          <span class="custom-control-description">Tiny (up to 11 pounds)</span>
         </label>
-    <label class="custom-control custom-radio">
+        <label class="custom-control custom-radio">
           <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">{{Option2}}</span>
+          <span class="custom-control-description">Small (12-22 pounds)</span>
         </label>
-    <label class="custom-control custom-radio">
-                <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
+        <label class="custom-control custom-radio">
+                <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">{{Option3}}</span>
+                <span class="custom-control-description">Medium (23-44 pounds)</span>
               </label>
-    <label class="custom-control custom-radio">
-                    <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
+        <label class="custom-control custom-radio">
+                    <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
-                    <span class="custom-control-description">{{Option4}}</span>
+                    <span class="custom-control-description">Large (45-88 pounds)</span>
                   </label>
-    <label class="custom-control custom-radio">
-                        <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
+        <label class="custom-control custom-radio">
+                        <input id="radioStacked6" name="radio-stacked" type="radio" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
-                        <span class="custom-control-description">{{Option5}}</span>
+                        <span class="custom-control-description">Extra Large (89-140 pounds)</span>
                       </label>
-    <label class="custom-control custom-radio">
-                            <input id="radioStacked3" name="radio-stacked" type="radio" class="custom-control-input">
+        <label class="custom-control custom-radio">
+                            <input id="radioStacked7" name="radio-stacked" type="radio" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">{{Option6}}</span>
+                            <span class="custom-control-description">No preference</span>
                           </label>
-</div>
+    </div>
 
-<hr>
-<!-- PAGINATION, Previous-button (# of ##) Next-button -->
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">{{CurrentPage}}</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-</nav>
+
+    <!-- QA 2 of 11:  -->
+    <h3 class="qXofX">2 of 11</h3>
+
+    <h2 class="QAtext">What is your type of residence?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+          <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">I live in a small apartment in a busy part of my city</span>
+        </label>
+        <label class="custom-control custom-radio">
+          <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">I live in an apartment with dog amenities</span>
+        </label>
+        <label class="custom-control custom-radio">
+                <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">I live in a house with a yard</span>
+              </label>
+        <label class="custom-control custom-radio">
+                    <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">I live in a house with a fenced yard</span>
+                  </label>
+    </div>
+
+    <!-- QA 3 of 11:  -->
+    <h3 class="qXofX">3 of 11</h3>
+
+    <h2 class="QAtext">What kind of climate do you live in?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+              <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Hot summers and mild winters</span>
+            </label>
+        <label class="custom-control custom-radio">
+              <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">Mild summers and cold winters</span>
+            </label>
+        <label class="custom-control custom-radio">
+                    <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">A mix of both</span>
+                  </label>
+    </div>
+    <!-- QA 4 of 11:  -->
+    <h3 class="qXofX">4 of 11</h3>
+
+    <h2 class="QAtext">Who lives in your household?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                  <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Adults only</span>
+                </label>
+        <label class="custom-control custom-radio">
+                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Adult(s) and child(ren)</span>
+                </label>
+        <label class="custom-control custom-radio">
+                        <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Just me</span>
+                      </label>
+    </div>
+    <!-- QA 5 of 11:  -->
+    <h3 class="qXofX">5 of 11</h3>
+
+    <h2 class="QAtext">Do you have pets already?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                          <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">Nope, just people in the house</span>
+                        </label>
+        <label class="custom-control custom-radio">
+                          <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">Yes, cat(s)</span><span class="custom-control-description">Yes, dog(s)</span>
+                        </label>
+        <label class="custom-control custom-radio">
+                                <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Just me</span>
+                              </label>
+    </div>
+</body>

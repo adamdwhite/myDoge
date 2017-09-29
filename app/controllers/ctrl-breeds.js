@@ -16,6 +16,9 @@ app.controller("breedCtrl",
         breedSearchFactory,
         userFactory
     ) {
+        $scope.isLoggedIn = function() {
+            return userFactory.isAuthenticated();
+        };
 
         breedSearchFactory.getAllBreeds()
             .then(function(allBreeds) {
@@ -29,22 +32,21 @@ app.controller("breedCtrl",
             });
 
 
-        // This function will SEND a new object to FACTORY, using the 
         let user = userFactory.getCurrentUser();
 
-        $scope.breeds = {
-            image: "",
-            name: "",
-            description: "",
-            uid: user
-        };
-        // submit the SAVED breed 
-        $scope.submitBreed = function() {
+        // submit the SAVED breed to the user table
+        $scope.saveBreed = function(breed) {
+            var breedToSave = {
+                image: breed.image,
+                name: breed.name,
+                description: breed.description,
+                uid: user
+            };
             console.log('SAVE breed clicked ');
-            console.log('Adding this breed to user', $scope.breeds);
-            breedSearchFactory.submitBreed($scope.breeds)
+            console.log('Adding this breed to user', breed);
+            breedSearchFactory.saveBreed(breedToSave)
                 .then((data) => {
-                    $scope.breeds.push(data);
+                    $scope.breeds = data;
                     // $location.url("/dashboard");
                 });
         };
