@@ -1,8 +1,9 @@
 body {
     background-color: #EDFBFD;
-    font-family: 'Helvetica';
+    font-family: 'Raleway';
     color: #110E09;
     border-radius: 1px;
+    position: relative;
 }
 
 #handlogopaw {
@@ -15,6 +16,10 @@ body {
     // color: #110E09;
 }
 
+#breedImage {
+    // border: 1px solid #681212;
+}
+
 .jumbotron {
     border-radius: 1px;
     background-color: white;
@@ -22,18 +27,65 @@ body {
     padding: 10px;
 }
 
-// NAVBAR Style
-.container-fluid {
+// NAVBAR style
+#navbar {
     border: 1px solid #FDF8EA;
     border-radius: 1px;
     color: white;
     background-color: #DDC683;
 }
 
+// FOOTER style
+#footer {
+    border: 1px solid #FDF8EA;
+    border-radius: 1px;
+    color: white;
+    background-color: #DDC683;
+    padding: 5px;
+    align-content: center;
+    margin-top: 2%;
+}
+
+// #buttonAbout {
+//     : right;
+// }
+// QA form styling:
+.qXofX {
+    font-size: 1em;
+    color: lightgray;
+    font-style: italic;
+}
+
+.custom-controls-stacked {
+    // padding: 10px;
+    margin: 5%;
+}
+
+.custom-radio {
+    // padding: 5px;
+    font-size: 1.25em;
+    margin: 2%;
+}
+
+.custom-control-input {
+    padding: 5px;
+}
+
 #breedDetail {
     text-align: left;
     font-size: 1em;
     padding: 10px;
+}
+
+#createAccount {
+    text-align: center;
+    background-color: white;
+    color: #9eb656;
+    font-size: 3em;
+    font-family: "Sansita";
+    border-radius: 2px;
+    padding: 10px;
+    margin: 2%;
 }
 
 // SEARCH input element

@@ -34,7 +34,7 @@ app.controller("breedCtrl",
 
         let user = userFactory.getCurrentUser();
 
-        // submit the SAVED breed to the user table
+        // Display the SAVEED breed to the user DOM
         $scope.saveBreed = function(breed) {
             var breedToSave = {
                 image: breed.image,

@@ -3,7 +3,10 @@
 app.controller("loginCtrl", function($scope, $window, userFactory, $location, $q, FBCreds) {
 
     console.log("control-user has loaded!");
-
+    $scope.newaccount = {
+        email: "",
+        password: ""
+    };
     $scope.account = {
         email: "",
         password: ""

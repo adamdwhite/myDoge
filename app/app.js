@@ -29,37 +29,34 @@ app.config(($routeProvider) => {
             templateUrl: 'partials/splash.html',
             controller: 'breedCtrl',
         })
-
-    .when('/login', {
-        templateUrl: 'partials/login.html',
-        controller: 'loginCtrl',
-    })
-
-    .when('/about', {
-        templateUrl: 'partials/about.html',
-        controller: 'aboutCtrl',
-    })
-
-    .when('/dashboard', {
+        .when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'loginCtrl',
+        })
+        .when('/about', {
+            templateUrl: 'partials/about.html',
+            controller: 'aboutCtrl',
+        })
+        .when('/dashboard', {
             templateUrl: 'partials/dashboard.html',
             controller: 'dashboardCtrl',
-            resolve: { isAuth }
-        })
-        .when('/item/newQA', {
-            templateUrl: 'partials/new-QA.html',
-            controller: 'newQACtrl',
             // resolve: { isAuth }
         })
-        .when('/dashboard/savedQA', {
-            templateUrl: 'partials/dashboard.html',
-            controller: 'savedQACtrl',
-            resolve: { isAuth }
-        })
-        .when('/dashboard/savedBreeds', {
-            templateUrl: 'partials/dashboard.html',
-            controller: 'savedBreedsCtrl',
-            resolve: { isAuth }
-        })
+        // .when('/item/newQA', {
+        //     templateUrl: 'partials/new-QA.html',
+        //     controller: 'newQACtrl',
+        //     // resolve: { isAuth }
+        // })
+        // .when('/dashboard/savedQA', {
+        //     templateUrl: 'partials/dashboard.html',
+        //     controller: 'savedQACtrl',
+        //     resolve: { isAuth }
+        // })
+        // .when('/dashboard/savedBreeds', {
+        //     templateUrl: 'partials/dashboard.html',
+        //     controller: 'savedBreedsCtrl',
+        //     resolve: { isAuth }
+        // })
         .otherwise('/');
 });
 

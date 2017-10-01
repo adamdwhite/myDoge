@@ -1,47 +1,55 @@
 <!-- This is the TEMPLATE for each question -->
-<!-- The QA form is continual via scrollspy. If user exits, autosave progress to dashboard. -->
+<div class="jumbotron">
+    <!-- The QA form is continual via scrollspy. If user exits, autosave progress to dashboard. -->
+    <i id="splashicon" class="material-icons">pan_tool</i>
+    <i id="splashicon" class="material-icons">pets</i>
+    <h1 class="display-3">Find a Match</h1>
+    <br>
 
-<body data-spy="scroll" data-target="#navbar-example">
-    <p>Static text for the top of the QUESTIONNAIRE. Consequat consectetur laboris mollit nisi adipisicing et sint laboris cillum ullamco cillum. Aute reprehenderit culpa ea veniam deserunt in ullamco eu adipisicing laborum non ut.</p>
-
-
+    <!-- <body data-spy="scroll" data-target="#navbar"> -->
+    <p>The following questions will help match a number of breeds to your lifestyle:</p>
+    <hr class="my-4">
     <!-- QA 1 of 11:  -->
     <h3 class="qXofX">1 of 11</h3>
 
-    <h2 class="QAtext">"What size of dog are you looking for?"</h2>
+    <h2 class="QAtext">What size of dog are you looking for?</h2>
 
     <div class="custom-controls-stacked">
         <label class="custom-control custom-radio">
-          <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+          <input ng-click="getDogesByCharacteristic('small')"name="question1" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Tiny (up to 11 pounds)</span>
-        </label>
+        </label><br>
         <label class="custom-control custom-radio">
-          <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+          <input ng-model="getDogesByCharacteristic('small')"
+          id="radioStacked2" name="question1" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">Small (12-22 pounds)</span>
-        </label>
+        </label><br>
         <label class="custom-control custom-radio">
-                <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                <input ng-model="getDogesByCharacteristic('medium')" id="radioStacked3" name="question1" type="radio" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">Medium (23-44 pounds)</span>
-              </label>
+              </label><br>
         <label class="custom-control custom-radio">
-                    <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
+          <!-- how to add (pass) more than one URL ext. to an ng-model function? -->
+                    <input ng-model="getDogesByCharacteristic('medium' + 'size')"  
+                    id="radioStacked4" name="question1" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">Large (45-88 pounds)</span>
-                  </label>
+                  </label><br>
         <label class="custom-control custom-radio">
-                        <input id="radioStacked6" name="radio-stacked" type="radio" class="custom-control-input">
+                        <input ng-model="getDogesByCharacteristic('size')" id="radioStacked5" name="question1" type="radio" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Extra Large (89-140 pounds)</span>
-                      </label>
+                      </label><br>
         <label class="custom-control custom-radio">
-                            <input id="radioStacked7" name="radio-stacked" type="radio" class="custom-control-input">
+                            <input ng-model="https://dogbreed-characteristics.herokuapp.com/allBreeds" id="radioStacked6" name="question1" type="radio" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">No preference</span>
-                          </label>
+                          </label><br>
     </div>
+    <hr class="my-4">
 
 
     <!-- QA 2 of 11:  -->
@@ -51,26 +59,28 @@
 
     <div class="custom-controls-stacked">
         <label class="custom-control custom-radio">
-          <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+          <input id="radioStacked1" name="question2" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">I live in a small apartment in a busy part of my city</span>
-        </label>
+        </label><br>
         <label class="custom-control custom-radio">
-          <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+          <input id="radioStacked2" name="question2" type="radio" class="custom-control-input">
           <span class="custom-control-indicator"></span>
           <span class="custom-control-description">I live in an apartment with dog amenities</span>
-        </label>
+        </label><br>
         <label class="custom-control custom-radio">
-                <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                <input id="radioStacked4" name="question2" type="radio" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description">I live in a house with a yard</span>
-              </label>
+              </label><br>
         <label class="custom-control custom-radio">
-                    <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
+                    <input id="radioStacked5" name="question2" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">I live in a house with a fenced yard</span>
-                  </label>
+                  </label><br>
     </div>
+    <hr class="my-4">
+
 
     <!-- QA 3 of 11:  -->
     <h3 class="qXofX">3 of 11</h3>
@@ -79,21 +89,24 @@
 
     <div class="custom-controls-stacked">
         <label class="custom-control custom-radio">
-              <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+              <input id="radioStacked1" name="question3" type="radio" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Hot summers and mild winters</span>
-            </label>
+            </label><br>
         <label class="custom-control custom-radio">
-              <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+              <input id="radioStacked2" name="question3" type="radio" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">Mild summers and cold winters</span>
-            </label>
+            </label><br>
         <label class="custom-control custom-radio">
-                    <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                    <input id="radioStacked4" name="question3" type="radio" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">A mix of both</span>
-                  </label>
+                  </label><br>
     </div>
+    <hr class="my-4">
+
+
     <!-- QA 4 of 11:  -->
     <h3 class="qXofX">4 of 11</h3>
 
@@ -101,21 +114,24 @@
 
     <div class="custom-controls-stacked">
         <label class="custom-control custom-radio">
-                  <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+                  <input id="radioStacked1" name="question4" type="radio" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
                   <span class="custom-control-description">Adults only</span>
-                </label>
+                </label><br>
         <label class="custom-control custom-radio">
-                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                  <input id="radioStacked2" name="question4" type="radio" class="custom-control-input">
                   <span class="custom-control-indicator"></span>
                   <span class="custom-control-description">Adult(s) and child(ren)</span>
-                </label>
+                </label><br>
         <label class="custom-control custom-radio">
-                        <input id="radioStacked4" name="radio-stacked" type="radio" class="custom-control-input">
+                        <input id="radioStacked4" name="question4" type="radio" class="custom-control-input">
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">Just me</span>
-                      </label>
+                      </label><br>
     </div>
+    <hr class="my-4">
+
+
     <!-- QA 5 of 11:  -->
     <h3 class="qXofX">5 of 11</h3>
 
@@ -123,19 +139,175 @@
 
     <div class="custom-controls-stacked">
         <label class="custom-control custom-radio">
-                          <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+                          <input id="radioStacked1" name="question5" type="radio" class="custom-control-input">
                           <span class="custom-control-indicator"></span>
                           <span class="custom-control-description">Nope, just people in the house</span>
-                        </label>
+                        </label><br>
         <label class="custom-control custom-radio">
-                          <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                          <input id="radioStacked2" name="question5" type="radio" class="custom-control-input">
                           <span class="custom-control-indicator"></span>
-                          <span class="custom-control-description">Yes, cat(s)</span><span class="custom-control-description">Yes, dog(s)</span>
-                        </label>
+                          <span class="custom-control-description">Yes, cat(s)</span>
+                        </label><br>
         <label class="custom-control custom-radio">
-                                <input id="radioStacked5" name="radio-stacked" type="radio" class="custom-control-input">
+                              <input id="radioStacked2" name="question5" type="radio" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">Yes, dog(s)</span>
+                        </label><br>
+        <label class="custom-control custom-radio">
+                                <input id="radioStacked5" name="question5" type="radio" class="custom-control-input">
                                 <span class="custom-control-indicator"></span>
                                 <span class="custom-control-description">Just me</span>
-                              </label>
+                              </label><br>
     </div>
+    <hr class="my-4">
+
+
+    <!-- QA 6 of 11:  -->
+    <h3 class="qXofX">6 of 11</h3>
+
+    <h2 class="QAtext">Are you or anyone in your household allergic to animal dander??</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                              <input id="radioStacked2" name="question6" type="radio" class="custom-control-input">
+                              <span class="custom-control-indicator"></span>
+                              <span class="custom-control-description">Yes</span>
+                            </label><br>
+        <label class="custom-control custom-radio">
+                                    <input id="radioStacked5" name="question6" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">No</span>
+                                  </label><br>
+    </div>
+    <hr class="my-4">
+
+    <!-- QA 7 of 11:  -->
+    <h3 class="qXofX">7 of 11</h3>
+
+    <h2 class="QAtext">How active would you prefer your dog to be?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                                      <input id="radioStacked2" name="question7" type="radio" class="custom-control-input">
+                                      <span class="custom-control-indicator"></span>
+                                      <span class="custom-control-description">I like to run, and would like my dog to be a running partner</span>
+                                    </label><br>
+        <label class="custom-control custom-radio">
+                                            <input id="radioStacked5" name="question7" type="radio" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">I would like to walk my dog daily, and that's about it</span>
+                                          </label><br>
+        <label class="custom-control custom-radio">
+                                              <input id="radioStacked5" name="question7" type="radio" class="custom-control-input">
+                                              <span class="custom-control-indicator"></span>
+                                              <span class="custom-control-description">I'm pretty much a couch potato, and need a dog who is okay with that</span>
+                                            </label><br>
+    </div>
+    <hr class="my-4">
+
+
+    <!-- QA 8 of 11:  -->
+    <h3 class="qXofX">8 of 11</h3>
+
+    <h2 class="QAtext">How much time and effort are you willing to put into grooming your dog?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                                          <input id="radioStacked2" name="question8" type="radio" class="custom-control-input">
+                                          <span class="custom-control-indicator"></span>
+                                          <span class="custom-control-description">I want my dog to be groomed to show-quality</span>
+                                        </label><br>
+        <label class="custom-control custom-radio">
+                                                <input id="radioStacked5" name="question8" type="radio" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description">I will groom my dog as recommended, and I prefer less maintenance</span>
+                                              </label><br>
+        <label class="custom-control custom-radio">
+                                                  <input id="radioStacked5" name="question8" type="radio" class="custom-control-input">
+                                                  <span class="custom-control-indicator"></span>
+                                                  <span class="custom-control-description">I would love a dog with very little grooming required</span>
+                                                </label><br>
+    </div>
+    <hr class="my-4">
+
+    <!-- QA 9 of 11:  -->
+    <h3 class="qXofX">9 of 11</h3>
+
+    <h2 class="QAtext">How do you feel about shedding?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                                              <input id="radioStacked5" name="question9" type="radio" class="custom-control-input">
+                                                  <span class="custom-control-indicator"></span>
+                                                  <span class="custom-control-description">I don't mind shedding</span>
+                                                </label><br>
+        <label class="custom-control custom-radio">
+                                              <input id="radioStacked2" name="question9" type="radio" class="custom-control-input">
+                                              <span class="custom-control-indicator"></span>
+                                              <span class="custom-control-description">I'm okay with some shedding, but not a lot</span>
+                                            </label><br>
+        <label class="custom-control custom-radio">
+                                                     <input id="radioStacked5" name="question9" type="radio" class="custom-control-input">
+                                                      <span class="custom-control-indicator"></span>
+                                                      <span class="custom-control-description">I want my dog to shed as little as possible</span>
+                                                    </label><br>
+    </div>
+    <hr class="my-4">
+
+
+    <!-- QA 10 of 11:  -->
+    <h3 class="qXofX">10 of 11</h3>
+
+    <h2 class="QAtext">What's your schedule like?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+           <input id="radioStacked1" name="question10" type="radio" class="custom-control-input">
+           <span class="custom-control-indicator"></span>
+           <span class="custom-control-description">I work long hours, and my dog will need to be okay on his/her own most of the day</span>
+         </label><br>
+        <label class="custom-control custom-radio">
+           <input id="radioStacked2" name="question10" type="radio" class="custom-control-input">
+           <span class="custom-control-indicator"></span>
+           <span class="custom-control-description">I work a moderate schedule, off on weekends, and I would like to be home for my dog whenever possible, but my dog will be home alone for at least 5 hours a day</span>
+         </label><br>
+        <label class="custom-control custom-radio">
+                 <input id="radioStacked3" name="question10" type="radio" class="custom-control-input">
+                 <span class="custom-control-indicator"></span>
+                 <span class="custom-control-description">I work from home, or I’m home much of the time, or I’m just crazy about my dog and I will be around to keep him/her company most of the time</span>
+               </label><br>
+    </div>
+    <hr class="my-4">
+
+
+    <!-- QA 11 of 11:  -->
+    <h3 class="qXofX">11 of 11</h3>
+
+    <h2 class="QAtext">What's your general lifestyle and household environment like?</h2>
+
+    <div class="custom-controls-stacked">
+        <label class="custom-control custom-radio">
+                  <input id="radioStacked1" name="question11" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">It's chill and peaceful most of the time</span>
+                </label><br>
+        <label class="custom-control custom-radio">
+                  <input id="radioStacked2" name="question11" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Moderately busy, plenty going on with family and such, but not too crazy</span>
+                </label><br>
+        <label class="custom-control custom-radio">
+                        <input id="radioStacked3" name="question11" type="radio" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Pretty bustling most of the time, such as lots of kids, loud music, hosting parties, etc.</span>
+                      </label><br>
+    </div>
+    <hr class="my-4">
+
+    <!-- SEE RESULTS BUTTON - could be made a partial bc this partial is lengthy, and the RESULTS will want to be tracked based on incomplete QA's, so the button will want to float around  -->
+    <a class="btn btn-primary btn-lg" href="#!/item/newQA" role="button">See the Results!</a>
+    <hr class="my-4">
+
+
+</div>
 </body>

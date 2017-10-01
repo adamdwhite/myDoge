@@ -24,14 +24,16 @@
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+<!-- SCROLLSPY the body so the navbar stays stuck at the top -->
 
-<body>
-
+<body data-spy="scroll" data-target="#navbar">
+    <!-- Always include in the app: -->
     <div ng-app="myDoge App">
         <div ng-controller="navCtrl">
+            <!-- Nav Bar -->
             <div ng-include="'partials/navbar.html'">
-                <!-- Nav Bar -->
             </div>
+
         </div>
 
         <div>
@@ -43,6 +45,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Footer :  -->
+        <div ng-include="'partials/footer.html'">
         </div>
     </div>
     <!-- module dependencies -->

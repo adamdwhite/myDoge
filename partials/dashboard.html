@@ -3,63 +3,56 @@
     <!-- <i id="splashicon" class="material-icons">fingerprint</i> -->
     <i id="splashicon" class="material-icons">pets</i>
     <h1 class="display-3">your Doge</h1>
-    <br><br>
-    <p class="lead">Welcome back, {{User name}}!</p>
-    <!-- <br>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" ng-ref='/item/newItem' role="button">New Doge Search</a>
-    </p>
-    <br> -->
-    <hr class="my-4">
-    <h3>Your saved breeds:</h3>
-    <!-- Here's where the saved breeds will go, stick them cards in a div that will add a DELETE chip to delete itself -->
-    <div ng-model="saveDoge">
+    <br>
+    <!-- <p class="lead">Welcome back, {{User name}}!</p> -->
 
+    <hr class="my-4">
+
+
+    <h3>Your Saved Breeds:</h3><br>
+    <!-- Here's where the saved breeds will go, stick them cards in a div that will include a DELETE chip to delete itself -->
+    <article id="newSavedBreed">
+        <div>
+            <button ng-model="huh" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                breed.name
+            </button>
+            <!-- expand / collapse IMG and DESCRIPTION of each breed -->
+            <div class="collapse" id="collapseExample">
+                <div class="card card-block">
+                    <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}" aria-placeholder="breedImage">BREED IMAGE</img>
+                    <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            <p>
+                <br>
+                <hr class="my-4">
+        </div>
+    </article>
+
+
+    <!-- YOUR SAVED SEARCHES:  -->
+    <!-- User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
+    <!-- (Bootstrap panel w body and lists) -->
+    <div class="panel panel-default">
+        <!-- PANEL TITLE: -->
+        <div class="panel-heading">
+            <h3>Your Saved Searches:</h3>
+        </div>
+
+        <!-- PANEL Contents: -->
+        <div class="panel-body">
+            <i id="pawbullet" class="material-icons">pets</i>
+            <a>user.name question += of 10 questions answered # of breeds recommended // MM/DD/YY of search}}</a>
+            <hr class="my-4">
+            <i id="pawbullet" class="material-icons">pets</i>
+            <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a>
+            <hr class="my-4">
+            <i id="pawbullet" class="material-icons">pets</i>
+            <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a>
+            <hr class="my-4">
+            <i id="pawbullet" class="material-icons">pets</i>
+            <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a>
+        </div>
     </div>
-
-    <hr class="my-4">
-    <!-- Here will be a list of saved searches for this user, in the following format:
-User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
-    <h3>Your saved searches:</h3>
-    <hr class="my-4">
-    <i id="pawbullet" class="material-icons">pets</i>
-    <a>{{user.name}} // {{question +=}}of 10 questions answered // {{# of breeds}} recommended // {{MM/DD/YY of search}}</a>
-    <hr class="my-4">
-    <i id="pawbullet" class="material-icons">pets</i>
-    <a>User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search</a>
-    <hr class="my-4">
-    <i id="pawbullet" class="material-icons">pets</i>
-    <a>User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search</a>
-    <hr class="my-4">
-    <i id="pawbullet" class="material-icons">pets</i>
-    <a>User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search</a>
-</div>
-
-<!-- Bootstrap panel w body and lists -->
-<div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">Panel heading</div>
-    <div class="panel-body">
-        <p>...</p>
-    </div>
-
-    <!-- Table -->
-    <table class="table">
-        ...
-    </table>
-</div>
-<!-- Bootstrap List items with item pills  -->
-<ul class="list-group">
-    <li class="list-group-item">
-        <span class="badge">14</span> Cras justo odio
-    </li>
-</ul>
-
-<!-- Bootstrap panel w body and lists -->
-<div class="list-group">
-    <button type="button" class="list-group-item">Cras justo odio</button>
-    <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-    <button type="button" class="list-group-item">Morbi leo risus</button>
-    <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-    <button type="button" class="list-group-item">Vestibulum at eros</button>
 </div>

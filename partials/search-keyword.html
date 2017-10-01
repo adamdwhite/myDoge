@@ -7,32 +7,31 @@
             <div id="imaginary_container">
                 <div class="col-sm-6 col-sm-offset-3">
                     <!-- The ng-model for the searchText lives here -->
-                    <input ng-model="breedSearch" type="text" class="form-control" placeholder="Example: Golden...">
+                    <input id="searchBar" ng-model="breedSearch" type="text" class="form-control" placeholder="Example: Golden...">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<hr class="my-4">
 
 <!-- limited to only after the user has typed 3 or more characters -->
 <article class="breed-list" ng-show="breedSearch.length>=3">
     <!-- OUTPUT div for the search results: -->
     <section>
-        <!-- Need to create a filter that only searches on breed.name and not all of the returned data -->
+        <!-- A filter that only searches on breed.name and not all of the returned data -->
         <div ng-repeat="breed in allBreeds | filter:breedSearch">
-            <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}"></img>
+            <img id="breedImage" class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}"></img>
             <h2 ng-model="breed.name">{{breed.name}}</h2>
             <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
 
             <!-- Option to SAVE the breed, applied to each card - ONLY IF LOGGED IN  -->
             <div ng-show="isLoggedIn">
-                <a class="btn btn-primary btn-lg" role="button" ng-click="saveBreed(breed)">Save</a>
+                <a class="btn btn-success" role="button" ng-click="saveBreed(breed)">Save</a>
                 <nbsp>to</nbsp>
                 <a href="partials/dashboard.html">My Breeds</a>
             </div>
+            <hr class="my-4">
         </div>
-        <hr class="my-4">
     </section>
 </article>
 <!-- <p class="lead">Answer a lifestyle questionnaire to match you with the most suitable dog breeds</p>

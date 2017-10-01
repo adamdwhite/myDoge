@@ -1,51 +1,53 @@
-<div class="container container--auth">
-    <!-- For SAVED USERS  -->
-    <div class="col-xs-6 text-left">
-        <h3>Login to myDoge:</h3>
-        <hr class="my-4">
-        <br>
-        <button ng-click="loginGoogle()" class="btn btn-info">Google Login</button>
-        <br>
-        <div>
-            <hr class="my-4">
-            <h4>Email Login</h4>
-            Email: <input type="text" autofocus="true" ng-model="account.email">
-        </div>
-        <br>
-        <div>
-            Password: <input type="password" ng-model="account.password">
-        </div>
-        <hr class="my-4">
-        <div>
-            <br>
-            <button ng-click="logIn()" class="btn btn-info">Login</button>
-        </div>
+<!-- SPLASH to advertise site account creation -->
+<div class="jumbotron">
+    <p id="createAccount" class="lead">Log in or create an account with us to save searches and breeds</p>
 
-    </div>
-
-    <!-- For REGISTERING USERS  -->
-
-    <div class="col-xs-6 text-left">
-        <section class="auth-form">
-            <h3>Create an Account:</h3>
+    <!-- LOGIN / REGISTER Account Access Section -->
+    <div class="container container--auth">
+        <!-- For SAVED USERS  -->
+        <div class="col-xs-6 text-left">
+            <h3>Login to myDoge:</h3>
             <hr class="my-4">
             <br>
-            <button ng-click="loginGoogle()" class="btn btn-info">Google Create</button>
+            <button ng-click="loginGoogle()" class="btn btn-info">Google Login</button>
+            <br>
             <div>
-                <hr class="my-4">
-                <h4>Register with email:</h4>
-                Email: <input type="text" autofocus="true" ng-model="account.email">
+                <hr class="my-4"> Gmail: <input type="text" autofocus="true" ng-model="account.email">
             </div>
             <br>
             <div>
                 Password: <input type="password" ng-model="account.password">
             </div>
+            <hr class="my-4">
             <div>
-                <hr class="my-4">
-
                 <br>
-                <button ng-click="register()" class="btn btn-default">Register</button>
+                <button ng-click="logIn()" class="btn btn-info">Login</button>
             </div>
-        </section>
+
+        </div>
+
+        <!-- For REGISTERING USERS  -->
+
+        <div class="col-xs-6 text-left">
+            <section class="auth-form">
+                <h3>Create an Account:</h3>
+                <hr class="my-4">
+                <br>
+                <button ng-click="loginGoogle()" class="btn btn-info">Google Create</button>
+                <div>
+                    <hr class="my-4">Email: <input type="text" autofocus="true" ng-model="newaccount.email">
+                </div>
+                <br>
+                <div>
+                    Password: <input type="password" ng-model="newaccount.password">
+                </div>
+                <div>
+                    <hr class="my-4">
+
+                    <br>
+                    <button ng-click="register()" class="btn btn-default">Register</button>
+                </div>
+            </section>
+        </div>
     </div>
 </div>

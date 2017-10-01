@@ -23,7 +23,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     const getBreedDetails = function(breedName) {
         console.log('showing breed of:', breedName);
         return $q((resolve, reject) => {
-            // this bit of code will conform the requested breed name 
+            // this bit will conform the requested breed name 
             let cleanDogName = breedName.toLowerCase().replace(/\s/g, '-');
             $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${cleanDogName}`)
                 .then((result) => {
@@ -51,13 +51,16 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 console.log("error - not saved!", errorCode, errorMessage);
             });
     };
-    // This is the factory for GETTING the USEr's saved breed object from firebase
-    const getDoges = function(saveDoge) {
+    // This is the factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
+    const getDoges = function(thisUsersID) {
         // let newObject = JSON.stringify(object);
-        console.log("saving a Doge", saveDoge);
+        console.log("getting the user's Doges", query);
+        var rootRef = `${FBCreds.databaseURL}`;
+        var dogeRef = rootRef.child('Doge');
+
+        var query = dogeRef.orderByChild('uid').equalTo(`${thisUsersID}`);
         // currentBreedID = object.breedID;
-        return $http.post(`${FBCreds.databaseURL}/Doge.json`,
-                saveDoge)
+        return $http.get(`${query}`)
             .then((data) => {
                 console.log("data", data);
                 return data;
