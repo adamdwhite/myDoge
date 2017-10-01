@@ -13,9 +13,11 @@ app.controller("dashboardCtrl",
         breedSearchFactory,
         userFactory
     ) {
-        $scope.huh = new firebase(FBCreds.databaseURL).startAt('Lhe30woNEoOipUocmBnR7WbEfK92').endAt('Lhe30woNEoOipUocmBnR7WbEfK92').once('value', function(snap) {
-            console.log('???', snap.val());
-        })
+        $scope.huh = [];
+
+        $scope.huh = breedSearchFactory.getDoges();
+        // console.log('???', snap.val());
+
 
         let user = userFactory.getCurrentUser();
 

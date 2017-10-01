@@ -42,11 +42,11 @@ app.config(($routeProvider) => {
             controller: 'dashboardCtrl',
             // resolve: { isAuth }
         })
-        // .when('/item/newQA', {
-        //     templateUrl: 'partials/new-QA.html',
-        //     controller: 'newQACtrl',
-        //     // resolve: { isAuth }
-        // })
+        .when('/item/newQA', {
+            templateUrl: 'partials/new-QA.html',
+            controller: 'newQACtrl',
+            // resolve: { isAuth }
+        })
         // .when('/dashboard/savedQA', {
         //     templateUrl: 'partials/dashboard.html',
         //     controller: 'savedQACtrl',

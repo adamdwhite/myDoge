@@ -52,18 +52,17 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
             });
     };
     // This is the factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
-    const getDoges = function(thisUsersID) {
-        // let newObject = JSON.stringify(object);
-        console.log("getting the user's Doges", query);
-        var rootRef = `${FBCreds.databaseURL}`;
-        var dogeRef = rootRef.child('Doge');
-
-        var query = dogeRef.orderByChild('uid').equalTo(`${thisUsersID}`);
-        // currentBreedID = object.breedID;
-        return $http.get(`${query}`)
+    const getDoges = function() {
+        $http.get(`${FBCreds.databaseURL}/Doge.json`)
             .then((data) => {
-                console.log("data", data);
-                return data;
+                var allMyDogs = [];
+                for (var key in data.data) {
+                    if (data.data[key].uid === 'Lhe30woNEoOipUocmBnR7WbEfK92') {
+                        allMyDogs.push(data.data[key]);
+                    }
+                }
+                console.log("dawgs", allMyDogs);
+                return allMyDogs;
             }, (error) => {
                 let errorCode = error.code;
                 let errorMessage = error.message;
