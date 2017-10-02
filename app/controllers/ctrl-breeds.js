@@ -34,11 +34,10 @@ app.controller("breedCtrl",
                 }, this);
             });
 
-
-
-        // Display the SAVEED breed to the user DOM
+        // Display the SAVED breed to the DASHBOARD:
         $scope.saveBreed = function(breed) {
             var breedToSave = {
+                fbid: "",
                 image: breed.image,
                 name: breed.name,
                 description: breed.description,
@@ -49,8 +48,10 @@ app.controller("breedCtrl",
             breedSearchFactory.saveBreed(breedToSave)
                 .then((data) => {
                     $scope.breeds = data;
+                    console.log('data to save');
                     // $location.url("/dashboard");
                 });
         };
-    }
-);
+
+
+    });

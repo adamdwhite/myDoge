@@ -3,7 +3,8 @@ body {
   font-family: 'Raleway';
   color: #110E09;
   border-radius: 1px;
-  position: relative; }
+  position: relative;
+  padding-bottom: 60px; }
 
 #handlogopaw {
   align-content: center; }
@@ -29,10 +30,9 @@ body {
   border-radius: 1px;
   color: white;
   background-color: #DDC683;
-  padding: 10px;
+  padding: 5px;
   text-align: right;
-  float: none;
-  margin-top: 2%; }
+  float: none; }
 
 #footerCopyright {
   font-size: 1em; }

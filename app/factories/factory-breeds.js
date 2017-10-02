@@ -10,7 +10,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
             $http.get("https://dogbreed-characteristics.herokuapp.com/allBreeds")
                 .then((result) => {
                     let allBreeds = result.data.breeds;
-                    console.log("all breeds", allBreeds);
+                    // console.log("all breeds", allBreeds);
                     resolve(allBreeds);
                 })
                 .catch((error) => {
@@ -22,14 +22,14 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     // PART 2 -- This is getting the details of image / breed name / description for each breed name:
 
     const getBreedDetails = function(breedName) {
-        console.log('showing breed of:', breedName);
+        // console.log('showing breed of:', breedName);
         return $q((resolve, reject) => {
             // this bit will conform the requested breed name 
             let cleanDogName = breedName.toLowerCase().replace(/\s/g, '-');
             $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${cleanDogName}`)
                 .then((result) => {
                     resolve(result.data);
-                    console.log('cleaned dog name');
+                    // console.log('cleaned dog name');
                 })
                 .catch((error) => {
                     reject(error);
@@ -62,24 +62,20 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     const getDoges = function() {
         return $http.get(`${FBCreds.databaseURL}/Doge.json`)
             .then((data) => {
-                var allMyDogs = [];
+                var allMyDogs = {};
                 var theseDoges = [];
                 for (var key in data.data) {
-
-
                     if (data.data[key].uid === 'Lhe30woNEoOipUocmBnR7WbEfK92') {
-                        allMyDogs.push(data.data[key]);
+                        allMyDogs[key] = data.data[key];
                     }
                 }
 
                 let dogCollection = allMyDogs;
-                console.log("dogCollection", dogCollection);
+                // console.log("dogCollection", dogCollection);
 
                 Object.keys(dogCollection).forEach((key) => {
                     dogCollection[key].id = key;
-
                     theseDoges.push(dogCollection[key]);
-                    console.log("fetched my doges", allMyDogs);
                 });
                 return theseDoges;
             }, (error) => {
@@ -87,8 +83,24 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 let errorMessage = error.message;
                 console.log("error - not saved!", errorCode, errorMessage);
             });
+    };
+    // This is the delete factory allowing user to DELETE each breed from DASHBOARD:
+    const deleteBreed = function(fbid) {
+        console.log('fbid', fbid);
 
+        return $q((resolve, reject) => {
+            return $http.delete(`${FBCreds.databaseURL}/Doge/${fbid}.json`)
+
+            .then((data) => {
+                    console.log('data', data);
+                    resolve();
+                })
+                .catch((error) => {
+                    console.log('Deleting error', error);
+                    reject(error);
+                });
+        });
     };
 
-    return { getAllBreeds, getBreedDetails, saveBreed, getDoges };
+    return { getAllBreeds, getBreedDetails, saveBreed, getDoges, deleteBreed };
 });
