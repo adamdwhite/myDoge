@@ -18,14 +18,15 @@ app.controller("dashboardCtrl",
         let thisGuy = [];
         // 
 
-        $scope.dogUID = breedSearchFactory.getDoges().then(dataObj => {
-            thisGuy = dataObj;
-            console.log("here are my doges", thisGuy);
-        });
+        $scope.dogUID = breedSearchFactory.getDoges()
+            .then(dataObj => {
+                $scope.myDoges = dataObj;
+                thisGuy = dataObj;
+                console.log("here are my doges", thisGuy);
+            });
 
         let user = userFactory.getCurrentUser();
 
-        $scope.myDoges = [];
 
         // $scope.myDoges = breedSearchFactory.getDoges();
 

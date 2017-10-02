@@ -20,6 +20,9 @@ app.controller("breedCtrl",
             return userFactory.isAuthenticated();
         };
 
+        let user = userFactory.getCurrentUser();
+
+
         breedSearchFactory.getAllBreeds()
             .then(function(allBreeds) {
                 $scope.allBreeds = [];
@@ -32,7 +35,6 @@ app.controller("breedCtrl",
             });
 
 
-        let user = userFactory.getCurrentUser();
 
         // Display the SAVEED breed to the user DOM
         $scope.saveBreed = function(breed) {

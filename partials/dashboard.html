@@ -4,34 +4,37 @@
     <i id="splashicon" class="material-icons">pets</i>
     <h1 class="display-3" style="font-family: Arvo">your Doge</h1>
     <br>
-    <!-- <p class="lead">Welcome back, {{User name}}!</p> -->
+    <!-- <p>Welcome back, {{User name}}!</p> -->
 
     <hr class="my-4">
 
 
     <h3>Your Saved Breeds:</h3><br>
-    <!-- Here's where the saved breeds will go, stick them cards in a div that will include a DELETE chip to delete itself -->
+    <!-- USER's saved breeds by list of saved BREED NAMEs, expand/collapse for space-saving -->
     <article id="newSavedBreed">
-        <div>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                breed.name
+        <div ng-repeat="dog in myDoges">
+            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample-{{dog.id}}" aria-expanded="false" aria-controls="collapseExample">
+                    {{dog.name}}
             </button>
-            <!-- expand / collapse IMG and DESCRIPTION of each breed -->
-            <div class="collapse" id="collapseExample">
+
+            <!-- expand / collapse IMG and DESCRIPTION of each breed name, and a DELETE chip -->
+            <div class="collapse" id="collapseExample-{{dog.id}}">
                 <div class="card card-block">
-                    <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}" aria-placeholder="breedImage">BREED IMAGE HERE</img>
-                    <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
+
+                    <!-- IMAGE of each dog card -->
+                    <img class="breedImage" ng-src="{{dog.image}}" aria-placeholder="breedImage"></img>
+
+                    <!-- DESCRIPTION of each dog card -->
+                    <p id="breedDetail">{{dog.description}}</p>
+
+                    <!-- DELETE button for each dog card -->
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </div>
-            <p>
-                <br>
-                <hr class="my-4">
         </div>
     </article>
-
-
-    YOUR SAVED SEARCHES:
+    <br>
+    <hr class="my-4"> YOUR SAVED SEARCHES:
     <!-- User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
     <!-- (Bootstrap panel w body and lists) -->
     <div class="panel panel-default">
@@ -39,7 +42,7 @@
         <div class="panel-heading">
             <h3>Your Saved Searches:</h3>
         </div>
-        <div ng-model="dogUID">{{dog.uid}}</div>
+        <!-- <div ng-repeat="dog in myDoges">{{dog.description}}</div> -->
         <!-- PANEL Contents: -->
         <div class="panel-body">
             <i id="pawbullet" class="material-icons">pets</i>

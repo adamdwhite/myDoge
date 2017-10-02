@@ -58,26 +58,37 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
 
 
     // This is the factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
-
+    // (need to include the ugly Id rather than relying on the dog.name)
     const getDoges = function() {
         return $http.get(`${FBCreds.databaseURL}/Doge.json`)
             .then((data) => {
                 var allMyDogs = [];
+                var theseDoges = [];
                 for (var key in data.data) {
+
 
                     if (data.data[key].uid === 'Lhe30woNEoOipUocmBnR7WbEfK92') {
                         allMyDogs.push(data.data[key]);
                     }
                 }
-                console.log("fetched my doges", allMyDogs);
-                return allMyDogs;
+
+                let dogCollection = allMyDogs;
+                console.log("dogCollection", dogCollection);
+
+                Object.keys(dogCollection).forEach((key) => {
+                    dogCollection[key].id = key;
+
+                    theseDoges.push(dogCollection[key]);
+                    console.log("fetched my doges", allMyDogs);
+                });
+                return theseDoges;
             }, (error) => {
                 let errorCode = error.code;
                 let errorMessage = error.message;
                 console.log("error - not saved!", errorCode, errorMessage);
             });
-    };
 
+    };
 
     return { getAllBreeds, getBreedDetails, saveBreed, getDoges };
 });
