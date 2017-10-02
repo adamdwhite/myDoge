@@ -3,7 +3,7 @@
 
 app.factory("breedSearchFactory", function($q, $http, FBCreds) {
 
-    // Retrieve all of (199) breeds from the API. This makes them searchable using the  
+    // PART 1 -- Retrieve all of (199) breeds from the API 
     const getAllBreeds = function() {
         console.log("url is", "https://dogbreed-characteristics.herokuapp.com/allBreeds");
         return $q((resolve, reject) => {
@@ -19,7 +19,8 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
         });
     };
 
-    // This is getting the details of image / breed name / description for each breed name:
+    // PART 2 -- This is getting the details of image / breed name / description for each breed name:
+
     const getBreedDetails = function(breedName) {
         console.log('showing breed of:', breedName);
         return $q((resolve, reject) => {
@@ -35,7 +36,10 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 });
         });
     };
+
+
     // This is the factory for PUSHING the new saved breed object to firebase
+
     const saveBreed = function(saveDoge) {
         // let newObject = JSON.stringify(object);
         console.log("save a Doge", saveDoge);
@@ -51,17 +55,21 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 console.log("error - not saved!", errorCode, errorMessage);
             });
     };
+
+
     // This is the factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
+
     const getDoges = function() {
-        $http.get(`${FBCreds.databaseURL}/Doge.json`)
+        return $http.get(`${FBCreds.databaseURL}/Doge.json`)
             .then((data) => {
                 var allMyDogs = [];
                 for (var key in data.data) {
+
                     if (data.data[key].uid === 'Lhe30woNEoOipUocmBnR7WbEfK92') {
                         allMyDogs.push(data.data[key]);
                     }
                 }
-                console.log("dawgs", allMyDogs);
+                console.log("fetched my doges", allMyDogs);
                 return allMyDogs;
             }, (error) => {
                 let errorCode = error.code;

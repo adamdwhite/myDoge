@@ -4,6 +4,7 @@ body {
     color: #110E09;
     border-radius: 1px;
     position: relative;
+    // padding-top: 70px;
 }
 
 #handlogopaw {
@@ -41,13 +42,18 @@ body {
     border-radius: 1px;
     color: white;
     background-color: #DDC683;
-    padding: 5px;
-    align-content: center;
+    padding: 10px;
+    text-align: right;
+    float: none;
     margin-top: 2%;
 }
 
-// #buttonAbout {
-//     : right;
+#footerCopyright {
+    font-size: 1em;
+}
+
+// #aboutButton {
+//     justify-content: right;
 // }
 // QA form styling:
 .qXofX {

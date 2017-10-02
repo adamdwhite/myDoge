@@ -1,4 +1,6 @@
-'use strict';
+"use strict";
+
+
 
 app.controller("dashboardCtrl",
 
@@ -13,17 +15,19 @@ app.controller("dashboardCtrl",
         breedSearchFactory,
         userFactory
     ) {
-        $scope.huh = [];
+        let thisGuy = [];
+        // 
 
-        $scope.huh = breedSearchFactory.getDoges();
-        // console.log('???', snap.val());
-
+        $scope.dogUID = breedSearchFactory.getDoges().then(dataObj => {
+            thisGuy = dataObj;
+            console.log("here are my doges", thisGuy);
+        });
 
         let user = userFactory.getCurrentUser();
 
         $scope.myDoges = [];
 
-        $scope.myDoges = breedSearchFactory.getDoges();
+        // $scope.myDoges = breedSearchFactory.getDoges();
 
-        // End Denpency Func 
+        // end Dependecy Func 
     });

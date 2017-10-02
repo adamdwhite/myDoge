@@ -2,7 +2,7 @@
     <i id="splashicon" class="material-icons">pan_tool</i>
     <!-- <i id="splashicon" class="material-icons">fingerprint</i> -->
     <i id="splashicon" class="material-icons">pets</i>
-    <h1 class="display-3">your Doge</h1>
+    <h1 class="display-3" style="font-family: Arvo">your Doge</h1>
     <br>
     <!-- <p class="lead">Welcome back, {{User name}}!</p> -->
 
@@ -19,7 +19,7 @@
             <!-- expand / collapse IMG and DESCRIPTION of each breed -->
             <div class="collapse" id="collapseExample">
                 <div class="card card-block">
-                    <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}" aria-placeholder="breedImage">BREED IMAGE</img>
+                    <img class="breedImage" ng-model="breed.image" ng-src="{{breed.image}}" aria-placeholder="breedImage">BREED IMAGE HERE</img>
                     <p id="breedDetail" ng-model="breed.description">{{breed.description}}</p>
                     <button class="btn btn-danger">Delete</button>
                 </div>
@@ -31,7 +31,7 @@
     </article>
 
 
-    <!-- YOUR SAVED SEARCHES:  -->
+    YOUR SAVED SEARCHES:
     <!-- User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
     <!-- (Bootstrap panel w body and lists) -->
     <div class="panel panel-default">
@@ -39,11 +39,11 @@
         <div class="panel-heading">
             <h3>Your Saved Searches:</h3>
         </div>
-
+        <div ng-model="dogUID">{{dog.uid}}</div>
         <!-- PANEL Contents: -->
         <div class="panel-body">
             <i id="pawbullet" class="material-icons">pets</i>
-            <a>user.name question += of 10 questions answered # of breeds recommended // MM/DD/YY of search}}</a>
+            <a>user.name question += of 10 questions answered # of breeds recommended // MM/DD/YY of search</a>
             <hr class="my-4">
             <i id="pawbullet" class="material-icons">pets</i>
             <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a>

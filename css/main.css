@@ -29,9 +29,13 @@ body {
   border-radius: 1px;
   color: white;
   background-color: #DDC683;
-  padding: 5px;
-  align-content: center;
+  padding: 10px;
+  text-align: right;
+  float: none;
   margin-top: 2%; }
+
+#footerCopyright {
+  font-size: 1em; }
 
 .qXofX {
   font-size: 1em;
