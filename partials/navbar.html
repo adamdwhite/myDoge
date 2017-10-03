@@ -8,19 +8,44 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-            <!-- <i id="pawbullet" class="material-icons">pets</i>
-            <i id="handbullet" class="material-icons">pan_tool</i> -->
-            <a class="navbar-brand" href="#!/item-list">my Doge</a>
+            <!-- LOGO DIV -->
+            <div>
+                <a class="navbar-brand" href="#!/item-list">my 
+                    <i id="handbullet" class="material-icons">pan_tool</i>
+                    <i id="pawbullet" class="material-icons">pets</i>
+                    Doge</a>
+            </div>
         </div>
-
-        <!-- The various states of the NAVBAR showing certain buttons when logged in / out  -->
+        <!-- NAV BAR -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-show="isLoggedIn" href='#!/dashboard' data-target='#'>Dashboard</a></li>
-                <li><a ng-show="isLoggedIn" href='#!/item/breedSearch' data-target='#'>New Search</a></li>
-                <li><a ng-show="!isLoggedIn" href='#!/login' data-target='#'>Loge In</a></li>
+                <!-- The various states of the NAVBAR showing certain buttons when logged in / out  -->
+                <li>
+                    <a ng-show="isLoggedIn" href='#!/dashboard' data-target='#'>
+                        <i id="splashicon" class="material-icons" style="font-size: 1.5em">fingerprint</i>
+                        <nbsp>Dashboard
+                    </a>
+                </li>
 
-                <li><a ng-show="isLoggedIn" href="#!/" data-target='#' ng-click="logout()">Loge Out</a></li>
+                <li>
+                    <a ng-show="isLoggedIn" href='#!/item/breedSearch' data-target='#'>
+                        <i id="splashicon" class="material-icons" style="font-size: 1.5em">pets</i>
+                        <nbsp>New Search
+                    </a>
+                </li>
+
+                <li>
+                    <a ng-show="!isLoggedIn" href='#!/login' data-target='#'>
+                        <i id="splashicon" class="material-icons" style="font-size: 1.5em">fingerprint</i>
+                        <nbsp>Loge In
+                    </a>
+                </li>
+
+                <li style="padding-right: 10px">
+                    <a ng-show="isLoggedIn" href="#!/" data-target='#' ng-click="logout()">
+                        <i id="splashicon" class="material-icons" style="font-size: 1.5em">eject</i>Loge Out
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

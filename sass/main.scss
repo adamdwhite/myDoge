@@ -1,6 +1,6 @@
 body {
     background-color: #EDFBFD;
-    font-family: 'Raleway';
+    font-family: 'Quicksand';
     color: #110E09;
     border-radius: 1px;
     position: relative;
@@ -17,8 +17,8 @@ body {
     // color: #110E09;
 }
 
-#breedImage {
-    // border: 1px solid #681212;
+#searchBar {
+    width: 100%;
 }
 
 .jumbotron {
@@ -32,7 +32,7 @@ body {
 #navbar {
     border: 1px solid #FDF8EA;
     border-radius: 1px;
-    color: white;
+    font-family: 'Arvo';
     background-color: #DDC683;
 }
 
@@ -52,10 +52,17 @@ body {
     font-size: 1em;
 }
 
-// #aboutButton {
-//     justify-content: right;
-// }
-// QA form styling:
+#eachBreed {
+    // font-family: "Arvo";
+    font-size: 1.25em;
+    padding: 5px;
+    background-color: #7E9243;
+    color: white;
+    border: solid 1px whitesmoke;
+    border-radius: 2px;
+    width: 50%;
+}
+
 .qXofX {
     font-size: 1em;
     color: lightgray;
@@ -87,12 +94,9 @@ body {
     text-align: center;
     background-color: white;
     color: #9eb656;
-    font-size: 3em;
+    font-size: 2em;
     font-family: "Sansita";
     border-radius: 2px;
     padding: 10px;
     margin: 2%;
 }
-
-// SEARCH input element
-.form-control {}

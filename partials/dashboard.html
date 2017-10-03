@@ -1,66 +1,67 @@
 <div class="jumbotron">
-    <i id="splashicon" class="material-icons">pan_tool</i>
-    <!-- <i id="splashicon" class="material-icons">fingerprint</i> -->
+    <!-- <i id="splashicon" class="material-icons">pan_tool</i> -->
+    <i id="splashicon" class="material-icons">fingerprint</i>
     <i id="splashicon" class="material-icons">pets</i>
-    <h1 class="display-3" style="font-family: Arvo">your Doge</h1>
+    <h2 class="display-3" style="font-family: Arvo">your Doge</h2>
     <br>
-    <!-- <p>Welcome back, {{User name}}!</p> -->
+    <p>Welcome back,</p>
+    <nbsp>
+        <p style="font-family: 'Arvo'">Adam</p>
+        <img src="">
 
-    <hr class="my-4">
+        <hr class="my-4">
 
-
-    <h3>Your Saved Breeds:</h3><br>
-    <!-- USER's saved breeds by list of saved BREED NAMEs, expand/collapse for space-saving -->
-    <article id="newSavedBreed">
-        <div ng-repeat="dog in myDoges">
-            <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample-{{dog.id}}" aria-expanded="false" aria-controls="collapseExample" style="margin:5px">
-                    {{dog.name}}
+        <h3>Your Saved Breeds:</h3><br>
+        <!-- USER's saved breeds by list of saved BREED NAMEs, expand/collapse for space-saving -->
+        <article id="newSavedBreed">
+            <div ng-repeat="dog in myDoges">
+                <button id="eachBreed" type="button" data-toggle="collapse" data-target="#collapseExample-{{dog.id}}" aria-expanded="false" aria-controls="collapseExample" style="margin: 10px"> {{dog.name}}
             </button>
 
-            <!-- expand / collapse IMG and DESCRIPTION of each breed name, and a DELETE chip -->
-            <div ng-controller="breedCtrl" class="collapse" id="collapseExample-{{dog.id}}">
-                <div class="card card-block">
+                <!-- expand / collapse IMG and DESCRIPTION of each breed name, and a DELETE chip -->
+                <div ng-controller="breedCtrl" class="collapse" id="collapseExample-{{dog.id}}">
+                    <div class="card card-block">
 
-                    <!-- IMAGE of each dog card -->
-                    <img class="breedImage" ng-src="{{dog.image}}" aria-placeholder="breedImage"></img>
+                        <!-- IMAGE of each dog card -->
+                        <img class="breedImage" ng-src="{{dog.image}}" aria-placeholder="breedImage"></img>
 
-                    <!-- DESCRIPTION of each dog card -->
-                    <p class="head" id="breedDetail">{{dog.description}}</p>
+                        <!-- DESCRIPTION of each dog card -->
+                        <p class="head" id="breedDetail">{{dog.description}}</p>
 
-                    <!-- DELETE button for each dog card -->
-                    <button ng-click="deleteBreed(dog, $index)" class="btn btn-warning">Delete</button>
-                    <nbsp style="font-size:.75em">from your saved breeds</nbsp>
-                    <!-- <nbsp style="font-size:.75em">Ok, deleted</nbsp> -->
-                    <br>
-                    <hr class="my-4">
+                        <!-- DELETE button for each dog card -->
+                        <button ng-click="deleteBreed(dog, $index)" class="btn btn-warning">Delete</button>
+                        <nbsp style="font-size:.75em">from your saved breeds</nbsp>
+                        <!-- <nbsp style="font-size:.75em">Ok, deleted</nbsp> -->
+                        <br>
+                        <hr class="my-4">
 
+                    </div>
                 </div>
             </div>
-        </div>
-    </article>
+        </article>
 
-    <!-- <hr class="my-4"> YOUR SAVED SEARCHES: -->
-    <!-- User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
-    <!-- (Bootstrap panel w body and lists) -->
-    <!-- <div class="panel panel-default"> -->
-    <!-- PANEL TITLE: -->
-    <!-- <div class="panel-heading"> -->
-    <!-- <h3>Your Saved Searches:</h3> -->
-    <!-- </div> -->
-    <!-- <div ng-repeat="dog in myDoges">{{dog.description}}</div> -->
-    <!-- PANEL Contents: -->
-    <!-- <div class="panel-body"> -->
-    <!-- <i id="pawbullet" class="material-icons">pets</i> -->
-    <!-- <a>user.name question += of 10 questions answered # of breeds recommended // MM/DD/YY of search</a> -->
-    <!-- <hr class="my-4"> -->
-    <!-- <i id="pawbullet" class="material-icons">pets</i> -->
-    <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
-    <!-- <hr class="my-4"> -->
-    <!-- <i id="pawbullet" class="material-icons">pets</i> -->
-    <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
-    <!-- <hr class="my-4"> -->
-    <!-- <i id="pawbullet" class="material-icons">pets</i> -->
-    <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
-    <!-- </div> -->
-    <!-- </div> -->
+        <!-- <hr class="my-4"> YOUR SAVED SEARCHES: -->
+        <!-- User Name // # of ## questions answered // # of breeds in result // MM/DD/YY of search -->
+        <!-- (Bootstrap panel w body and lists) -->
+        <!-- <div class="panel panel-default"> -->
+        <!-- PANEL TITLE: -->
+        <!-- <div class="panel-heading"> -->
+        <!-- <h3>Your Saved Searches:</h3> -->
+        <!-- </div> -->
+        <!-- <div ng-repeat="dog in myDoges">{{dog.description}}</div> -->
+        <!-- PANEL Contents: -->
+        <!-- <div class="panel-body"> -->
+        <!-- <i id="pawbullet" class="material-icons">pets</i> -->
+        <!-- <a>user.name question += of 10 questions answered # of breeds recommended // MM/DD/YY of search</a> -->
+        <!-- <hr class="my-4"> -->
+        <!-- <i id="pawbullet" class="material-icons">pets</i> -->
+        <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
+        <!-- <hr class="my-4"> -->
+        <!-- <i id="pawbullet" class="material-icons">pets</i> -->
+        <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
+        <!-- <hr class="my-4"> -->
+        <!-- <i id="pawbullet" class="material-icons">pets</i> -->
+        <!-- <a>User Name # of ## questions answered # of breeds in result MM/DD/YY of search</a> -->
+        <!-- </div> -->
+        <!-- </div> -->
 </div>

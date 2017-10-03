@@ -1,6 +1,6 @@
 body {
   background-color: #EDFBFD;
-  font-family: 'Raleway';
+  font-family: 'Quicksand';
   color: #110E09;
   border-radius: 1px;
   position: relative;
@@ -13,6 +13,9 @@ body {
   font-size: 4em;
   color: #9EB656; }
 
+#searchBar {
+  width: 100%; }
+
 .jumbotron {
   border-radius: 1px;
   background-color: white;
@@ -22,7 +25,7 @@ body {
 #navbar {
   border: 1px solid #FDF8EA;
   border-radius: 1px;
-  color: white;
+  font-family: 'Arvo';
   background-color: #DDC683; }
 
 #footer {
@@ -36,6 +39,15 @@ body {
 
 #footerCopyright {
   font-size: 1em; }
+
+#eachBreed {
+  font-size: 1.25em;
+  padding: 5px;
+  background-color: #7E9243;
+  color: white;
+  border: solid 1px whitesmoke;
+  border-radius: 2px;
+  width: 50%; }
 
 .qXofX {
   font-size: 1em;
@@ -61,7 +73,7 @@ body {
   text-align: center;
   background-color: white;
   color: #9eb656;
-  font-size: 3em;
+  font-size: 2em;
   font-family: "Sansita";
   border-radius: 2px;
   padding: 10px;

@@ -10,7 +10,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
             $http.get("https://dogbreed-characteristics.herokuapp.com/allBreeds")
                 .then((result) => {
                     let allBreeds = result.data.breeds;
-                    // console.log("all breeds", allBreeds);
+                    console.log("all breeds", allBreeds);
                     resolve(allBreeds);
                 })
                 .catch((error) => {
@@ -29,7 +29,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
             $http.get(`https://dogbreed-characteristics.herokuapp.com/details/?dogBreed=${cleanDogName}`)
                 .then((result) => {
                     resolve(result.data);
-                    // console.log('cleaned dog name');
+                    console.log('cleaned dog name');
                 })
                 .catch((error) => {
                     reject(error);
