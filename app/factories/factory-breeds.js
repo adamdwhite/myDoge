@@ -19,7 +19,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
         });
     };
 
-    // PART 2 -- This is getting the details of image / breed name / description for each breed name:
+    // PART 2 -- Get the details of image / breed name / description for each breed name:
 
     const getBreedDetails = function(breedName) {
         // console.log('showing breed of:', breedName);
@@ -38,7 +38,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     };
 
 
-    // This is the factory for PUSHING the new saved breed object to firebase
+    // Factory for PUSHING the new saved breed object to firebase
 
     const saveBreed = function(saveDoge) {
         // let newObject = JSON.stringify(object);
@@ -57,7 +57,7 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
     };
 
 
-    // This is the factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
+    // Factory for GETTING back the USER's currently-saved list of BREEDS object from firebase
     // (need to include the ugly Id rather than relying on the dog.name)
     const getDoges = function() {
         return $http.get(`${FBCreds.databaseURL}/Doge.json`)
@@ -84,7 +84,8 @@ app.factory("breedSearchFactory", function($q, $http, FBCreds) {
                 console.log("error - not saved!", errorCode, errorMessage);
             });
     };
-    // This is the delete factory allowing user to DELETE each breed from DASHBOARD:
+
+    // Factory allowing user to DELETE each breed from DASHBOARD:
     const deleteBreed = function(fbid) {
         console.log('fbid', fbid);
 
