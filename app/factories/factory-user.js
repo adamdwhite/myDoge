@@ -1,10 +1,8 @@
 "use strict";
 
-/*
-    provide the basic auth functionality for firebase
+/* provide the basic auth functionality for firebase
  */
 // This factory only deals with AUTHORIZATION
-
 
 app.factory("userFactory", function($q, $http) {
 
